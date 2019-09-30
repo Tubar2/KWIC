@@ -28,34 +28,40 @@
 #ifndef LineStorage_hpp
 #define LineStorage_hpp
 
-#include <stdio.h>
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
 
 class LineStorage {
     
-    //TODO: Define variables
-    
 public:
     
-    //TODO: Define Routines
+    // MARK: Variables
+    vector<string> originalLine {};         // Vector of strings of words
+    vector<string> shiftedVariations {};    // All shifted variations of line
+
     
     //MARK: wordsInLine
+    int wordsInLine();                      // Returns number of words in line
     
     //MARK: storedLines
+    int storedLines();                      // Returns number of lines in storage
     
     //MARK: charsInWord
+    int charsInWord(int position);           // Returns specified char
+
+    //MARK: getWord
+    string getWord(int position);           // Returns specified word
     
+    //MARK: getChar
+    char getChar(int wordPosition, int charPosition); // Returns specified character from specified word
     
-    //TODO: Define Functions
+    //TODO: Implement setWord
+    //MARK: setWord
     
-    //MARK: CHAR
-    
-    //MARK: SETCHAR
-    
-    //MARK: WORDS
-    
-    //MARK: DELINE
-    
-    //MARK: DELWRD
+    //TODO: Implement deleters and constructors
 };
 
 #endif /* LineStorage_hpp */

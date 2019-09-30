@@ -16,6 +16,6 @@
 #ifndef Alphabetizer_hpp
 #define Alphabetizer_hpp
 
-#include <stdio.h>
+#include <iostream>
 
 #endif /* Alphabetizer_hpp */

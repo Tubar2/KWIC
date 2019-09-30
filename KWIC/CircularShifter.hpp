@@ -22,6 +22,14 @@
 #ifndef CircularShifter_hpp
 #define CircularShifter_hpp
 
-#include <stdio.h>
+#include <iostream>
+
+class CircularShifter {
+    
+public:
+    
+    
+    
+};
 
 #endif /* CircularShifter_hpp */
