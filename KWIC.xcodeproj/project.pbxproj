@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		D793D40723424FD200977DB7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D793D40623424FD200977DB7 /* main.cpp */; };
+		D793D40F2342550B00977DB7 /* Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D793D40D2342550B00977DB7 /* Input.cpp */; };
+		D793D4122342559700977DB7 /* LineStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D793D4102342559700977DB7 /* LineStorage.cpp */; };
+		D793D415234259D200977DB7 /* CircularShifter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D793D413234259D200977DB7 /* CircularShifter.cpp */; };
+		D793D41823425AF400977DB7 /* Alphabetizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D793D41623425AF400977DB7 /* Alphabetizer.cpp */; };
+		D793D41B23425C2500977DB7 /* Output.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D793D41923425C2500977DB7 /* Output.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +30,16 @@
 /* Begin PBXFileReference section */
 		D793D40323424FD200977DB7 /* KWIC */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = KWIC; sourceTree = BUILT_PRODUCTS_DIR; };
 		D793D40623424FD200977DB7 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		D793D40D2342550B00977DB7 /* Input.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Input.cpp; sourceTree = "<group>"; };
+		D793D40E2342550B00977DB7 /* Input.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Input.hpp; sourceTree = "<group>"; };
+		D793D4102342559700977DB7 /* LineStorage.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LineStorage.cpp; sourceTree = "<group>"; };
+		D793D4112342559700977DB7 /* LineStorage.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LineStorage.hpp; sourceTree = "<group>"; };
+		D793D413234259D200977DB7 /* CircularShifter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CircularShifter.cpp; sourceTree = "<group>"; };
+		D793D414234259D200977DB7 /* CircularShifter.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CircularShifter.hpp; sourceTree = "<group>"; };
+		D793D41623425AF400977DB7 /* Alphabetizer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Alphabetizer.cpp; sourceTree = "<group>"; };
+		D793D41723425AF400977DB7 /* Alphabetizer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Alphabetizer.hpp; sourceTree = "<group>"; };
+		D793D41923425C2500977DB7 /* Output.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Output.cpp; sourceTree = "<group>"; };
+		D793D41A23425C2500977DB7 /* Output.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Output.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +73,16 @@
 			isa = PBXGroup;
 			children = (
 				D793D40623424FD200977DB7 /* main.cpp */,
+				D793D40D2342550B00977DB7 /* Input.cpp */,
+				D793D40E2342550B00977DB7 /* Input.hpp */,
+				D793D4102342559700977DB7 /* LineStorage.cpp */,
+				D793D4112342559700977DB7 /* LineStorage.hpp */,
+				D793D413234259D200977DB7 /* CircularShifter.cpp */,
+				D793D414234259D200977DB7 /* CircularShifter.hpp */,
+				D793D41623425AF400977DB7 /* Alphabetizer.cpp */,
+				D793D41723425AF400977DB7 /* Alphabetizer.hpp */,
+				D793D41923425C2500977DB7 /* Output.cpp */,
+				D793D41A23425C2500977DB7 /* Output.hpp */,
 			);
 			path = KWIC;
 			sourceTree = "<group>";
@@ -119,6 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D793D4122342559700977DB7 /* LineStorage.cpp in Sources */,
+				D793D40F2342550B00977DB7 /* Input.cpp in Sources */,
+				D793D41B23425C2500977DB7 /* Output.cpp in Sources */,
+				D793D415234259D200977DB7 /* CircularShifter.cpp in Sources */,
+				D793D41823425AF400977DB7 /* Alphabetizer.cpp in Sources */,
 				D793D40723424FD200977DB7 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
