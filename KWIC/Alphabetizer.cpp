@@ -8,6 +8,25 @@
 
 #include "Alphabetizer.hpp"
 
+bool compareString(string a, string b){
+    bool bigger {};
+    int i{0};
+    
+    for (auto c : a) {
+        if (tolower(c) < tolower(b[i])) {
+            bigger = true;
+            break;
+        }
+        else if (tolower(c) > tolower(b[i])){
+            bigger = false;
+            break;
+        }
+        i++;
+    }
+    
+    return bigger;
+}
+
 Alphabetizer::Alphabetizer(LineStorage * newdata)
 :data(newdata)
 {
@@ -38,4 +57,8 @@ void Alphabetizer::removeStops(){
             change = false;
         }
     }
+}
+
+void Alphabetizer::alphabetiseData(){
+    sort(data->shiftedVariations.begin(), data->shiftedVariations.end(), compareString);
 }

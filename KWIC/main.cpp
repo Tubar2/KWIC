@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <string>
+#include <ctype.h>
 #include <vector>
 using namespace std;
 
@@ -17,6 +18,8 @@ string testJoinVector(vector<string> myVector);
 vector<string> testMakeCircularShifts(vector<string> data);
 void removeStops(vector<string> & shiftedVariations, vector<string> stopWords);
 string testGetWordFromString(int position, string line);
+void testAlphabetizeData(vector<string> & shiftedVariations);
+bool testCompareString(string a, string b);
 
 int main(int argc, const char * argv[]) {
     
@@ -37,6 +40,10 @@ int main(int argc, const char * argv[]) {
     removeStops(shiftsVector, stopsVector);
     printVector(shiftsVector);
     
+    testAlphabetizeData(shiftsVector);
+    printVector(shiftsVector);
+    
+
     return 0;
 }
 
@@ -147,3 +154,28 @@ void removeStops(vector<string> & shiftedVariations, vector<string> stopWords){
     }
 }
 
+//TODO: Diminuir função
+//MARK: compareString
+bool testCompareString(string a, string b){
+    bool bigger {};
+    int i{0};
+    
+    for (auto c : a) {
+        if (tolower(c) < tolower(b[i])) {
+            bigger = true;
+            break;
+        }
+        else if (tolower(c) > tolower(b[i])){
+            bigger = false;
+            break;
+        }
+        i++;
+    }
+    
+    return bigger;
+}
+
+//MARK: Sorting
+void testAlphabetizeData(vector<string> & shiftedVariations){
+    sort(shiftedVariations.begin(), shiftedVariations.end(), testCompareString);
+}

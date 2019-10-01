@@ -24,7 +24,7 @@ class Alphabetizer {
     
     
 public:
-    void alphabetizeData();
+    void alphabetiseData();
     void removeStops();
     
     Alphabetizer(LineStorage * newdata);
