@@ -14,6 +14,7 @@
 		D793D41B23425C2500977DB7 /* Output.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D793D41923425C2500977DB7 /* Output.cpp */; };
 		D793D41E2342A1EC00977DB7 /* I_Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D793D41C2342A1EC00977DB7 /* I_Input.cpp */; };
 		D793D4212342A5D500977DB7 /* Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D793D41F2342A5D500977DB7 /* Input.cpp */; };
+		D793D4242342A9B100977DB7 /* Text_Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D793D4222342A9B100977DB7 /* Text_Input.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +44,8 @@
 		D793D41D2342A1EC00977DB7 /* I_Input.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = I_Input.hpp; sourceTree = "<group>"; };
 		D793D41F2342A5D500977DB7 /* Input.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Input.cpp; sourceTree = "<group>"; };
 		D793D4202342A5D500977DB7 /* Input.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Input.hpp; sourceTree = "<group>"; };
+		D793D4222342A9B100977DB7 /* Text_Input.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Text_Input.cpp; sourceTree = "<group>"; };
+		D793D4232342A9B100977DB7 /* Text_Input.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Text_Input.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,8 @@
 				D793D41D2342A1EC00977DB7 /* I_Input.hpp */,
 				D793D41F2342A5D500977DB7 /* Input.cpp */,
 				D793D4202342A5D500977DB7 /* Input.hpp */,
+				D793D4222342A9B100977DB7 /* Text_Input.cpp */,
+				D793D4232342A9B100977DB7 /* Text_Input.hpp */,
 			);
 			path = KWIC;
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 				D793D4122342559700977DB7 /* LineStorage.cpp in Sources */,
 				D793D41B23425C2500977DB7 /* Output.cpp in Sources */,
 				D793D41E2342A1EC00977DB7 /* I_Input.cpp in Sources */,
+				D793D4242342A9B100977DB7 /* Text_Input.cpp in Sources */,
 				D793D4212342A5D500977DB7 /* Input.cpp in Sources */,
 				D793D415234259D200977DB7 /* CircularShifter.cpp in Sources */,
 				D793D41823425AF400977DB7 /* Alphabetizer.cpp in Sources */,

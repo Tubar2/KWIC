@@ -7,9 +7,19 @@
 //
 
 #include <iostream>
+#include <string>
+using namespace std;
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    string str {};
+    cout << "Type something:" << endl;
+    getline(cin, str);
+    
+    std::cout << str <<endl;
+    
+    cout << "Type another thing:" << endl;
+    getline(cin, str, '.');
+    std::cout << str <<endl;
+    
     return 0;
 }

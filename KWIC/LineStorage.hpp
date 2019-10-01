@@ -39,9 +39,10 @@ class LineStorage {
 public:
     
     // MARK: Variables
+    string allOiginalLine {};
     vector<string> originalLine {};         // Vector of strings of words
     vector<string> shiftedVariations {};    // All shifted variations of line
-
+    vector<string> stopWords {};            // All stop words
     
     //MARK: wordsInLine
     int wordsInLine();                      // Returns number of words in line
@@ -50,7 +51,7 @@ public:
     int storedLines();                      // Returns number of lines in storage
     
     //MARK: charsInWord
-    int charsInWord(int position);           // Returns specified char
+    int charsInWord(int position);          // Returns specified char
 
     //MARK: getWord
     string getWord(int position);           // Returns specified word

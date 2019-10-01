@@ -23,13 +23,15 @@
 #define CircularShifter_hpp
 
 #include <iostream>
+#include "LineStorage.hpp"
 
 class CircularShifter {
+    LineStorage data;
     
 public:
+    virtual void makeCircularShifts();
     
-    
-    
+    CircularShifter(LineStorage newData);    //Constructor
 };
 
 #endif /* CircularShifter_hpp */

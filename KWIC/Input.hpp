@@ -10,20 +10,31 @@
 #define Input_hpp
 
 #include "I_Input.hpp"
+#include "LineStorage.hpp"
 #include <iostream>
 #include <fstream>
+#include <sstream>
+#include <string>
 
 using namespace std;
 
-class Input: public I_Input {
+class Input /*: public I_Input*/ {
     
-private:
-    ifstream filename {};
-    ifstream stopWords {};
+protected:
+    ifstream in_file {}, stopWords {};
+    string filename {}, stopWordsFilename {};
+    LineStorage data;
     
 public:
     
-    virtual void read(istream &is) const override;
+    virtual ~Input() = default;
+//    virtual void read(istream &is) const override;
+    virtual void setupReading();        //Trys to open files
+    virtual void extractLine();
+    virtual void extractWords();        // Extracts stop words (each word is in single line)
+    virtual bool reachedEOF();
+    
+    Input(string name, string stops);   //Constructor
 };
 
 #endif /* Input_hpp */

@@ -7,3 +7,19 @@
 //
 
 #include "CircularShifter.hpp"
+using namespace std;
+
+CircularShifter::CircularShifter(LineStorage newData)
+:data(newData)
+{
+    cout << "Circular Shifter object created with " << data.wordsInLine() << " words." << endl;
+}
+
+void CircularShifter::makeCircularShifts(){
+    string tempShift {};
+    int expectedShifts = data.wordsInLine();
+    
+    for (int i = 0; i < expectedShifts; i++) {
+        
+    }
+}
