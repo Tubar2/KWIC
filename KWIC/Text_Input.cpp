@@ -7,3 +7,10 @@
 //
 
 #include "Text_Input.hpp"
+
+using namespace std;
+
+void Text_Input::read(istream &is) const {
+    cout << "Read function called in Text_Input." << endl;
+}
+

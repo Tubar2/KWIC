@@ -68,3 +68,7 @@ void Input::extractWords(){
 bool Input::reachedEOF(){
     return in_file.eof();
 }
+
+void Input::read(istream &is) const{
+    cout << "Read function called in Input" << endl;
+}

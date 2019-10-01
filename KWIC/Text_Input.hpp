@@ -16,7 +16,7 @@ class Text_Input: Input {
     
 public:
     virtual ~Text_Input() = default;
-//    virtual void read(istream &is) const override;
+    virtual void read(istream &is) const override;
 };
 
 #endif /* Text_Input_hpp */

@@ -39,7 +39,7 @@ class LineStorage {
 public:
     
     // MARK: Variables
-    string allOiginalLine {};
+    string wholeOriginalLine {};
     vector<string> originalLine {};         // Vector of strings of words
     vector<string> shiftedVariations {};    // All shifted variations of line
     vector<string> stopWords {};            // All stop words
@@ -63,6 +63,7 @@ public:
     //MARK: setWord
     
     //TODO: Implement deleters and constructors
+    LineStorage();  //Constructor
 };
 
 #endif /* LineStorage_hpp */

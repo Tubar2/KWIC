@@ -18,7 +18,7 @@
 
 using namespace std;
 
-class Input /*: public I_Input*/ {
+class Input: public I_Input {
     
 protected:
     ifstream in_file {}, stopWords {};
@@ -28,7 +28,7 @@ protected:
 public:
     
     virtual ~Input() = default;
-//    virtual void read(istream &is) const override;
+    virtual void read(istream &is) const override;
     virtual void setupReading();        //Trys to open files
     virtual void extractLine();
     virtual void extractWords();        // Extracts stop words (each word is in single line)

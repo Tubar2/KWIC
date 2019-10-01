@@ -10,8 +10,8 @@
 #include "I_Input.hpp"
 
 //TODO: Define function
-istream &operator>>(istream &is, const I_Input &obj){
-    
-    obj.read(is);
-    return is;
-}
+//istream &operator>>(istream &is, const I_Input &obj){
+//    
+//    obj.read(is);
+//    return is;
+//}

@@ -78,3 +78,7 @@ char LineStorage::getChar(int wordPosition, int charPosition){
     
     return requestedChar;
 }
+
+LineStorage::LineStorage(){
+    cout << "Line Storage object created." << endl;
+}

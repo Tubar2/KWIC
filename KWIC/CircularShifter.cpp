@@ -9,17 +9,44 @@
 #include "CircularShifter.hpp"
 using namespace std;
 
-CircularShifter::CircularShifter(LineStorage newData)
-:data(newData)
-{
-    cout << "Circular Shifter object created with " << data.wordsInLine() << " words." << endl;
+// Auxiliar Function
+string joinVector(vector<string> myVector){
+    string line {};
+    
+    for (auto it = myVector.begin(); it != myVector.end(); ++it) {
+        if(std::next(it) == myVector.end()) // last element
+        {
+            line.append(*it);
+        }
+        else {
+            line.append(*it);
+            line.append(" ");
+        }
+    }
+    
+    return line;
 }
 
-void CircularShifter::makeCircularShifts(){
-    string tempShift {};
-    int expectedShifts = data.wordsInLine();
+CircularShifter::CircularShifter(vector<string> originalLineVector)
+:data(originalLineVector)
+{
+    cout << "Circular Shifter object created with " << originalLineVector.size() << " words." << endl;
+    
+}
+
+vector<string> CircularShifter::makeCircularShifts(){
+    string tempShift {}, tempWord {};
+    vector<string> allShifts {};
+    int expectedShifts = static_cast<int>(data.size());
     
     for (int i = 0; i < expectedShifts; i++) {
+        tempWord = data.front(); //Returns first element from vector
+        data.erase(data.begin());
+        data.push_back(tempWord);
         
+        tempShift = joinVector(data);
+        allShifts.push_back(tempShift);
     }
+    
+    return allShifts;
 }

@@ -14,7 +14,7 @@
 using namespace std;
 
 class I_Input {
-    friend istream &operator>>(istream &is, const I_Input &obj);
+//    friend istream &operator>>(istream &is, const I_Input &obj);
     
 public:
     virtual void read(istream &is) const = 0;
