@@ -17,5 +17,18 @@
 #define Alphabetizer_hpp
 
 #include <iostream>
+#include "LineStorage.hpp"
+
+class Alphabetizer {
+    LineStorage * data {};
+    
+    
+public:
+    void alphabetizeData();
+    void removeStops();
+    
+    Alphabetizer(LineStorage * newdata);
+    
+};
 
 #endif /* Alphabetizer_hpp */
