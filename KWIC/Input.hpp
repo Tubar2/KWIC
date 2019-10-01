@@ -29,6 +29,7 @@ public:
     
     virtual ~Input() = default;
     virtual void read(istream &is) const override;
+    
     virtual void setupReading();        //Trys to open files
     virtual void extractLine();
     virtual void extractWords();        // Extracts stop words (each word is in single line)
