@@ -15,18 +15,26 @@ void printVector(vector<string> myvector);
 void testMultipleParamGetLine();
 string testJoinVector(vector<string> myVector);
 vector<string> testMakeCircularShifts(vector<string> data);
+void removeStops(vector<string> & shiftedVariations, vector<string> stopWords);
+string testGetWordFromString(int position, string line);
 
 int main(int argc, const char * argv[]) {
     
 //    testMultipleParamGetLine();
-    vector<string> testVector {}, shiftsVector {};
+    vector<string> testVector {}, shiftsVector {}, stopsVector {};
     testVector.push_back("Oi,");
     testVector.push_back("meu");
     testVector.push_back("nome");
     testVector.push_back("é");
     testVector.push_back("Ricardo.");
         
+    stopsVector.push_back("é");
+    stopsVector.push_back("meu");
+    
     shiftsVector = testMakeCircularShifts(testVector);
+//    printVector(shiftsVector);
+    
+    removeStops(shiftsVector, stopsVector);
     printVector(shiftsVector);
     
     return 0;
@@ -90,3 +98,52 @@ vector<string> testMakeCircularShifts( vector<string> data){
     
     return allShifts;
 }
+
+//MARK: wordFromString
+string testGetWordFromString(int position, string line){
+    string word {};
+    int tempPos {};
+    
+    for (auto c : line) {
+        if (c == ' ') {
+            tempPos += 1;
+            if ((tempPos-1) == position) {
+                return word;
+            }
+            word = "";
+        }
+        else{
+            word += c;
+        }
+        
+    }
+    return "Word not found";
+}
+
+//MARK: Remove Stops
+void removeStops(vector<string> & shiftedVariations, vector<string> stopWords){
+    
+    string firstWord {};
+    bool change = false;
+    auto dataIT = shiftedVariations.begin();
+    auto stopsIT = stopWords.begin();
+    
+    while (dataIT != shiftedVariations.end()) {
+        firstWord = testGetWordFromString(0, *dataIT);
+        while (stopsIT != stopWords.end()) {
+            if (*stopsIT == firstWord) {
+                dataIT = shiftedVariations.erase(dataIT);
+                change = true;
+                break;
+            }
+            ++stopsIT;
+        }
+        stopsIT = stopWords.begin();
+        if (!change) {
+            ++dataIT;
+        } else{
+            change = false;
+        }
+    }
+}
+
