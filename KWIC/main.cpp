@@ -10,9 +10,10 @@
 #include <string>
 #include <ctype.h>
 #include <vector>
+
 #include "CircularShifter.hpp"
 #include "Alphabetizer.hpp"
-
+#include "Text_Output.hpp"
 #include "Text_Input.hpp"
 
 using namespace std;
@@ -59,8 +60,18 @@ int main(int argc, const char * argv[]) {
     alph.removeStops();
     alph.alphabetiseData();
     
-    cout << "=======================" << endl;
-    printVector(data.shiftedVariations);
+    //TODO: Read all lines of file
+    
+    //Creating output object
+    Text_Output to("Exits/exit.txt", data.shiftedVariations);
+    
+    to.createFile();
+    to.printOutput();
+    
+    //Closing files
+    to.closeFile();
+    input.closeFile();
+    words.closeFile();
     
     return 0;
 }
