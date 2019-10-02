@@ -27,13 +27,6 @@ string joinVector(vector<string> myVector){
     return line;
 }
 
-CircularShifter::CircularShifter(vector<string> originalLineVector)
-:data(originalLineVector)
-{
-    cout << "Circular Shifter object created with " << originalLineVector.size() << " words." << endl;
-    
-}
-
 vector<string> CircularShifter::makeCircularShifts(){
     string tempShift {}, tempWord {};
     vector<string> allShifts {};
@@ -45,8 +38,17 @@ vector<string> CircularShifter::makeCircularShifts(){
         data.push_back(tempWord);
         
         tempShift = joinVector(data);
+        cout << "Shift (" << (i+1) << "/" << expectedShifts << "): " << tempShift << endl;
         allShifts.push_back(tempShift);
     }
     
     return allShifts;
+}
+
+//MARK: Constructor
+CircularShifter::CircularShifter(vector<string> & originalLineVector)
+:data(originalLineVector)
+{
+    cout << "Circular Shifter object created with " << originalLineVector.size() << " words." << endl;
+    
 }

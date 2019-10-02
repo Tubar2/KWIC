@@ -18,7 +18,12 @@ int LineStorage::wordsInLine(){
 // MARK: storedLines
 int LineStorage::storedLines(){
     
-    return (static_cast<int>(shiftedVariations.size()) + 1);
+    return (static_cast<int>(shiftedVariations.size()));
+}
+
+//MARK: storedStops
+int LineStorage::storedStops(){
+    return (static_cast<int>(stopWords.size()));
 }
 
 // MARK: charsInWord
@@ -79,6 +84,7 @@ char LineStorage::getChar(int wordPosition, int charPosition){
     return requestedChar;
 }
 
+//MARK: getWordFromString
 string LineStorage::getWordFromString(int position, string line){
     string word {};
     int tempPos {};
@@ -99,6 +105,7 @@ string LineStorage::getWordFromString(int position, string line){
     return "Word not found";
 }
 
+//MARK: Constructor
 LineStorage::LineStorage(){
     cout << "Line Storage object created." << endl;
 }

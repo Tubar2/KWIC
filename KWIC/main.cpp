@@ -10,6 +10,11 @@
 #include <string>
 #include <ctype.h>
 #include <vector>
+#include "CircularShifter.hpp"
+#include "Alphabetizer.hpp"
+
+#include "Text_Input.hpp"
+
 using namespace std;
 
 void printVector(vector<string> myvector);
@@ -19,31 +24,44 @@ vector<string> testMakeCircularShifts(vector<string> data);
 void removeStops(vector<string> & shiftedVariations, vector<string> stopWords);
 string testGetWordFromString(int position, string line);
 void testAlphabetizeData(vector<string> & shiftedVariations);
+void testWithMadeVectors();
 bool testCompareString(string a, string b);
 
 int main(int argc, const char * argv[]) {
     
-//    testMultipleParamGetLine();
-    vector<string> testVector {}, shiftsVector {}, stopsVector {};
-    testVector.push_back("Oi,");
-    testVector.push_back("meu");
-    testVector.push_back("nome");
-    testVector.push_back("é");
-    testVector.push_back("Ricardo.");
-        
-    stopsVector.push_back("é");
-    stopsVector.push_back("meu");
+    entryType stops = typeStops;
+    entryType inputs = typeInput;
     
-    shiftsVector = testMakeCircularShifts(testVector);
-//    printVector(shiftsVector);
+    //Creating Line Storage
+    LineStorage data;
     
-    removeStops(shiftsVector, stopsVector);
-    printVector(shiftsVector);
+    //Creating and setting up new Input objects
+    Text_Input input("Resources/myfile.txt", data);
+    Text_Input words("Resources/mystops.txt", data);
+    input.setup();
+    words.setup();
     
-    testAlphabetizeData(shiftsVector);
-    printVector(shiftsVector);
+    //Extracting Words and line
+    words.extract(stops);
+    input.extract(inputs);
     
-
+    //Creating CircularShifter object
+    CircularShifter cs (data.originalLine);
+    
+    //Creating all shifts for stored line
+    data.shiftedVariations = cs.makeCircularShifts();
+    cout << "Shifts made: " << data.storedLines() << endl;
+    
+    //Creating alphabetizer
+    Alphabetizer alph(data);
+    
+    //Removing stops and alphabetizing
+    alph.removeStops();
+    alph.alphabetiseData();
+    
+    cout << "=======================" << endl;
+    printVector(data.shiftedVariations);
+    
     return 0;
 }
 
@@ -67,6 +85,27 @@ void testMultipleParamGetLine(){
     cout << "Type another thing:" << endl;
     getline(cin, str, '.');
     std::cout << str <<endl;
+}
+
+void testWithMadeVectors(){
+    vector<string> testVector {}, shiftsVector {}, stopsVector {};
+        testVector.push_back("Oi,");
+        testVector.push_back("meu");
+        testVector.push_back("nome");
+        testVector.push_back("é");
+        testVector.push_back("Ricardo.");
+            
+        stopsVector.push_back("é");
+        stopsVector.push_back("meu");
+        
+        shiftsVector = testMakeCircularShifts(testVector);
+    //    printVector(shiftsVector);
+        
+        removeStops(shiftsVector, stopsVector);
+        printVector(shiftsVector);
+        
+        testAlphabetizeData(shiftsVector);
+        printVector(shiftsVector);
 }
 
 //MARK: Vector -> String

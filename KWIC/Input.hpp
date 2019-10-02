@@ -18,24 +18,25 @@
 
 using namespace std;
 
+//TODO: Define enum for type of entry: stopwords or mainFile
+enum entryType { typeStops, typeInput};
+
 class Input: public I_Input {
     
 protected:
-    ifstream in_file {}, stopWords {};
-    string filename {}, stopWordsFilename {};
-    LineStorage data;
+    entryType entry {};
+    string filename {}, format {};
+    LineStorage & data;
     
 public:
     
+    virtual void read(LineStorage & data) const override;
+    
+    virtual void setup();
+    
     virtual ~Input() = default;
-    virtual void read(istream &is) const override;
-    
-    virtual void setupReading();        //Trys to open files
-    virtual void extractLine();
-    virtual void extractWords();        // Extracts stop words (each word is in single line)
-    virtual bool reachedEOF();
-    
-    Input(string name, string stops);   //Constructor
+    //MARK: Constructor
+    Input(string inputName, string format, LineStorage & data);   //Constructor
 };
 
 #endif /* Input_hpp */
