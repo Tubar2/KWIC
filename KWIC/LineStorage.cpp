@@ -79,6 +79,26 @@ char LineStorage::getChar(int wordPosition, int charPosition){
     return requestedChar;
 }
 
+string LineStorage::getWordFromString(int position, string line){
+    string word {};
+    int tempPos {};
+    
+    for (auto c : line) {
+        if (c == ' ') {
+            tempPos += 1;
+            if ((tempPos-1) == position) {
+                return word;
+            }
+            word = "";
+        }
+        else{
+            word += c;
+        }
+        
+    }
+    return "Word not found";
+}
+
 LineStorage::LineStorage(){
     cout << "Line Storage object created." << endl;
 }

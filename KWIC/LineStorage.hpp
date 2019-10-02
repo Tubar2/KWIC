@@ -59,6 +59,9 @@ public:
     //MARK: getChar
     char getChar(int wordPosition, int charPosition); // Returns specified character from specified word
     
+    //MARK: getWordFromString
+    string getWordFromString(int position, string line);
+    
     //TODO: Implement setWord
     //MARK: setWord
     

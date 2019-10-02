@@ -7,6 +7,7 @@
 //
 
 #include "Input.hpp"
+
 using namespace std;
 
 Input::Input(string name, string stops)
