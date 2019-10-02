@@ -26,12 +26,12 @@
 #include "LineStorage.hpp"
 
 class CircularShifter {
-    vector<string> data {};
+    vector<string> & data;
 public:
     virtual vector<string> makeCircularShifts();
     
-    CircularShifter(vector<string> originalLineVector);   //Constructor
-    ~CircularShifter();                      //Destructor
+    CircularShifter(vector<string> & originalLineVector);   //Constructor
+    ~CircularShifter() = default;                      //Destructor
 };
 
 #endif /* CircularShifter_hpp */
