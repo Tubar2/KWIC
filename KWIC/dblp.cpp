@@ -1,14 +1,20 @@
 /*
-g++ dblp.cpp -lcurl -ljsoncpp -I /usr/local/json/include/
+compile with:
+    g++ dblp.cpp -lcurl -I single_include/
+    biblioteca já json incluida.
+    libcurl precisa ser baixada.
 */
+
+//TODO: Organizar esse módulo em uma classe quando a interface for definida.
 
 #include <iostream>
 #include <memory>
-#include <jsoncpp/json/json.h>
 #include <curl/curl.h>
 #include <nlohmann/json.hpp>
 
-// write the data into a `std::string` rather than to a file.
+using json = nlohmann::json;
+
+// write the data into a `std::string`
 std::size_t write_data(void* buf, std::size_t size, std::size_t nmemb, void* userp)
 {
     if(auto sp = static_cast<std::string*>(userp))
@@ -50,22 +56,34 @@ std::string get_url(std::string const& url)
 
 int main()
 {
-    curl_global_init(CURL_GLOBAL_DEFAULT);
-    //CURL *curl;
+    // query is the desired search paramter
+    std::string query {"test"};
+
+    // building url
     std::string url;
     url.append("https://dblp.org/search/publ/api?q=");
-    url.append("Parnas");
+    url.append(query);
     url.append("&format=json");
     std::cout << url << std::endl;
     
-    auto json = get_url(url);
+    // store json file from url into variable j
+    json j = json::parse(get_url(url));
+    
+    // reaching the part where the articles are stored
+    json o = j["result"]["hits"]["hit"];
 
-    //std::cout << json << '\n';
+    int i = 1;
+    std::string str;
 
-    Json::Reader reader;
-    Json::Value obj;
-    reader.parse(json, obj);
-    std::cout << obj["result"]["hits"]["hit"]["info"]["tittle"] << std::endl;
-    curl_global_cleanup();
+    // iterating through articles and colecting titles
+    for (auto it = o.begin(); it != o.end(); ++it)
+    {
+        str = (*it)["info"]["title"];
+        std::cout << i << ' ' << str << std::endl;
+        i++;
+
+        //TODO: set structure to store title strings
+    }
+
     return 0;
 }
