@@ -30,7 +30,10 @@ class CircularShifter {
 public:
     virtual vector<string> makeCircularShifts();
     
-    CircularShifter(vector<string> & originalLineVector);   //Constructor
+    //MARK: Constructors
+    CircularShifter(vector<string> & originalLineVector);   //1 param Constructor
+    
+    
     ~CircularShifter() = default;                      //Destructor
 };
 
