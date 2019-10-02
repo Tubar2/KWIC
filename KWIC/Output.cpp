@@ -7,3 +7,8 @@
 //
 
 #include "Output.hpp"
+
+Output::Output(string outputName, vector<string> & data)
+:data(data), outputTitle(outputName){
+    cout << "Output object created." << endl;
+}
