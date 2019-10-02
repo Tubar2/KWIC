@@ -1,6 +1,6 @@
 /*
 compile with:
-    g++ dblp.cpp -lcurl -I single_include/
+    g++ -std=c++14 dblp.cpp -lcurl -I single_include/
     biblioteca já json incluida.
     libcurl precisa ser baixada.
 */
