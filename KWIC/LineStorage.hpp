@@ -66,6 +66,9 @@ public:
     //TODO: Implement setWord
     //MARK: setWord
     
+    //MARK: deletePrevInfo
+    void deletePrevInfo();
+    
     //TODO: Implement deleters and constructors
     LineStorage();  //Constructor
 };

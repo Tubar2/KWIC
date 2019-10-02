@@ -105,6 +105,14 @@ string LineStorage::getWordFromString(int position, string line){
     return "Word not found";
 }
 
+//MARK: deletePrevInfo
+void LineStorage::deletePrevInfo(){
+    wholeOriginalLine = "";
+    originalLine.clear();
+    shiftedVariations.clear();
+    
+}
+
 //MARK: Constructor
 LineStorage::LineStorage(){
     cout << "Line Storage object created." << endl;
