@@ -55,7 +55,7 @@
 		D7B5103D2344CB3200BF83D3 /* mystops.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = mystops.txt; path = KWIC/Resources/mystops.txt; sourceTree = SOURCE_ROOT; };
 		D7B510442345040900BF83D3 /* Text_Output.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Text_Output.cpp; sourceTree = "<group>"; };
 		D7B510452345040900BF83D3 /* Text_Output.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Text_Output.hpp; sourceTree = "<group>"; };
-		D7B510482345221D00BF83D3 /* exit.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = exit.txt; sourceTree = "<group>"; };
+		D7B5104A2345446E00BF83D3 /* exit.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = exit.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +123,7 @@
 		D7B51047234521AE00BF83D3 /* Exits */ = {
 			isa = PBXGroup;
 			children = (
-				D7B510482345221D00BF83D3 /* exit.txt */,
+				D7B5104A2345446E00BF83D3 /* exit.txt */,
 			);
 			path = Exits;
 			sourceTree = "<group>";
