@@ -20,14 +20,14 @@
 #include "LineStorage.hpp"
 
 class Alphabetizer {
-    LineStorage * data {};
+    LineStorage & data;
     
     
 public:
     void alphabetiseData();
     void removeStops();
     
-    Alphabetizer(LineStorage * newdata);
+    Alphabetizer(LineStorage & newdata);
     
 };
 
