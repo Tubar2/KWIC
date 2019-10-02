@@ -47,8 +47,9 @@ public:
     //MARK: wordsInLine
     int wordsInLine();                      // Returns number of words in line
     
-    //MARK: storedLines
+    //MARK: storage verification
     int storedLines();                      // Returns number of lines in storage
+    int storedStops();                      // Returns number of stop words in storage
     
     //MARK: charsInWord
     int charsInWord(int position);          // Returns specified char
@@ -58,6 +59,9 @@ public:
     
     //MARK: getChar
     char getChar(int wordPosition, int charPosition); // Returns specified character from specified word
+    
+    //MARK: getWordFromString
+    string getWordFromString(int position, string line);
     
     //TODO: Implement setWord
     //MARK: setWord

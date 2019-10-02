@@ -14,9 +14,34 @@
 
 class Text_Input: Input {
     
+    ifstream in_file {};
+    
 public:
-    virtual ~Text_Input() = default;
-    virtual void read(istream &is) const override;
+    
+    //MARK: setup()
+    void setup() override;
+    
+    //MARK: setupReading
+    void setupReading();  //Opens file for reading
+    
+    //MARK: reachedEOF
+    bool reachedEOF();  //Check if eof was reached
+    
+    //MARK: extractors
+    virtual void extract(entryType typeEntry);  //Switches extraction type
+    
+    //MARK: Constructor
+    Text_Input(string filename, LineStorage & data);  //Constructor
+    
+    //MARK: Destructor
+    ~Text_Input() = default; //Destructor
+    
+    //MARK: Interface Functions Implementation
+    virtual void read(LineStorage & data) const override;
+    
+private:
+    void extractStops(); //Extrcats each word in a vector<string>
+    void extractMain();  //Extracts line from main file and separates each word in a vector<string>
 };
 
 #endif /* Text_Input_hpp */

@@ -10,6 +10,7 @@
 #define I_Input_hpp
 
 #include <iostream>
+#include "LineStorage.hpp"
 
 using namespace std;
 
@@ -17,7 +18,7 @@ class I_Input {
 //    friend istream &operator>>(istream &is, const I_Input &obj);
     
 public:
-    virtual void read(istream &is) const = 0;
+    virtual void read(LineStorage & data) const = 0;
     virtual ~I_Input() = default;
 };
 

@@ -15,15 +15,19 @@
 		D793D41E2342A1EC00977DB7 /* I_Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D793D41C2342A1EC00977DB7 /* I_Input.cpp */; };
 		D793D4212342A5D500977DB7 /* Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D793D41F2342A5D500977DB7 /* Input.cpp */; };
 		D793D4242342A9B100977DB7 /* Text_Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D793D4222342A9B100977DB7 /* Text_Input.cpp */; };
+		D7B510422344E10E00BF83D3 /* myfile.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7B5103C2344CB1300BF83D3 /* myfile.txt */; };
+		D7B510432344E11400BF83D3 /* mystops.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7B5103D2344CB3200BF83D3 /* mystops.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		D793D40123424FD200977DB7 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			dstPath = usr/share/man/man1;
+			dstSubfolderSpec = 7;
 			files = (
+				D7B510432344E11400BF83D3 /* mystops.txt in CopyFiles */,
+				D7B510422344E10E00BF83D3 /* myfile.txt in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -46,6 +50,8 @@
 		D793D4202342A5D500977DB7 /* Input.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Input.hpp; sourceTree = "<group>"; };
 		D793D4222342A9B100977DB7 /* Text_Input.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Text_Input.cpp; sourceTree = "<group>"; };
 		D793D4232342A9B100977DB7 /* Text_Input.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Text_Input.hpp; sourceTree = "<group>"; };
+		D7B5103C2344CB1300BF83D3 /* myfile.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = myfile.txt; path = KWIC/Resources/myfile.txt; sourceTree = SOURCE_ROOT; };
+		D7B5103D2344CB3200BF83D3 /* mystops.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = mystops.txt; path = KWIC/Resources/mystops.txt; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,8 +99,18 @@
 				D793D4202342A5D500977DB7 /* Input.hpp */,
 				D793D4222342A9B100977DB7 /* Text_Input.cpp */,
 				D793D4232342A9B100977DB7 /* Text_Input.hpp */,
+				D7B5103B2344CAA000BF83D3 /* Resources */,
 			);
 			path = KWIC;
+			sourceTree = "<group>";
+		};
+		D7B5103B2344CAA000BF83D3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D7B5103C2344CB1300BF83D3 /* myfile.txt */,
+				D7B5103D2344CB3200BF83D3 /* mystops.txt */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
