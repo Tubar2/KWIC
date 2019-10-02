@@ -10,6 +10,7 @@
 #include <string>
 #include <ctype.h>
 #include <vector>
+#include <algorithm>
 #include "CircularShifter.hpp"
 #include "Alphabetizer.hpp"
 

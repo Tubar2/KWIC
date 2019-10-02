@@ -17,6 +17,7 @@
 #define Alphabetizer_hpp
 
 #include <iostream>
+#include <algorithm>
 #include "LineStorage.hpp"
 
 class Alphabetizer {
