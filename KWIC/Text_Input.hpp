@@ -14,7 +14,11 @@
 
 class Text_Input: Input {
     
+private:
     ifstream in_file {};
+    
+    void extractStops(); //Extrcats each word in a vector<string>
+    void extractMain();  //Extracts line from main file and separates each word in a vector<string>
     
 public:
     
@@ -30,6 +34,9 @@ public:
     //MARK: extractors
     virtual void extract(entryType typeEntry);  //Switches extraction type
     
+    //MARK:
+    void closeFile();
+    
     //MARK: Constructor
     Text_Input(string filename, LineStorage & data);  //Constructor
     
@@ -39,9 +46,6 @@ public:
     //MARK: Interface Functions Implementation
     virtual void read(LineStorage & data) const override;
     
-private:
-    void extractStops(); //Extrcats each word in a vector<string>
-    void extractMain();  //Extracts line from main file and separates each word in a vector<string>
 };
 
 #endif /* Text_Input_hpp */
