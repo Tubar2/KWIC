@@ -1,7 +1,11 @@
 KWIC : main.o LineStorage.o CircularShifter.o Alphabetizer.o I_Input.o Input.o Text_Input.o Output.o Text_Output.o
-	g++ -std=c++14 -o KWIC main.o LineStorage.o CircularShifter.o Alphabetizer.o I_Input.o Input.o Text_Input.o Output.o Text_Output.o -g
+	g++ -std=c++14 -o KWIC main.o LineStorage.o CircularShifter.o Alphabetizer.o I_Input.o Input.o Text_Input.o Output.o Text_Output.o -g -Wall
 
-main.o : main.cpp CircularShifter.hpp Alphabetizer.hpp Text_Input.hpp Output.hpp
+Main_dblp : main_dblp.o LineStorage.o CircularShifter.o Alphabetizer.o I_Input.o Input.o Text_Input.o Output.o Text_Output.o DBLP_Input.o
+	g++ -std=c++14 -o Main_dblp main_dblp.o LineStorage.o CircularShifter.o Alphabetizer.o I_Input.o Input.o Text_Input.o Output.o Text_Output.o DBLP_Input.o -lcurl -I single_include/ -g -Wall
+
+
+main.o : main.cpp CircularShifter.hpp Alphabetizer.hpp Text_Input.hpp Output.hpp Text_Output.hpp
 	g++ -std=c++14 -c main.cpp -g -Wall
 LineStorage.o : LineStorage.cpp LineStorage.hpp
 	g++ -std=c++14 -c LineStorage.cpp -g -Wall
@@ -19,10 +23,14 @@ Output.o : Output.cpp Output.hpp
 	g++ -std=c++14 -c Output.cpp -g -Wall
 Text_Output.o : Text_Output.cpp Text_Output.cpp Output.hpp
 	g++ -std=c++14 -c Text_Output.cpp -g -Wall
-
+DBLP_Input.o : DBLP_Input.cpp DBLP_Input.hpp I_Input.hpp LineStorage.hpp Input.hpp
+	g++ -std=c++14 -c DBLP_Input.cpp -g -Wall -lcurl -I single_include/
+main_dblp.o : main_dblp.cpp DBLP_Input.hpp CircularShifter.hpp Alphabetizer.hpp Text_Input.hpp Output.hpp Text_Output.hpp
+	g++ -std=c++14 -c main_dblp.cpp -g -Wall -lcurl -I single_include/
 
 clean :
-#windows
+	rm KWIC Main_dblp main.o main_dblp.o Alphabetizer.o CircularShifter.o DBLP_Input.o I_Input.o Input.o LineStorage.o Output.o Text_Input.o Text_Output.o
+
 #del KWIC main.o LineStorage.o CircularShifter.o Alphabetizer.o I_Input.o Input.o Text_Input.o
-#linux
-	rm KWIC main.o LineStorage.o CircularShifter.o Alphabetizer.o I_Input.o Input.o Text_Input.o Output.o Text_Output.o
+#windows
+	
