@@ -29,7 +29,7 @@ void testWithMadeVectors();
 bool testCompareString(string a, string b);
 bool clearPrevEnv(string filepath);
 
-int main(int argc, const char * argv[]) {
+int main2(int argc, const char * argv[]) {
     
     string filepath {"Exits/"}, line{};
     cout << "Enter output file name: (no txt needed)" << endl;

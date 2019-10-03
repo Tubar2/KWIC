@@ -6,7 +6,7 @@
 #include "CircularShifter.hpp"
 #include "Alphabetizer.hpp"
 
-bool clearPrevEnv(string filepath);
+bool clearPrevEnv2(string filepath);
 
 int main()
 {
@@ -18,7 +18,7 @@ int main()
     filepath += line + ".txt";
     
     //TODO: Solution for clearPrevEnv
-    if (!clearPrevEnv(filepath)){
+    if (!clearPrevEnv2(filepath)){
         exit(3);
     }
     
@@ -79,7 +79,7 @@ int main()
     return 0;
 }
 
-bool clearPrevEnv(string filepath){
+bool clearPrevEnv2(string filepath){
     
     bool opened {};
     ifstream a{};

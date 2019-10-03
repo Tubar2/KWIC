@@ -12,7 +12,7 @@
 #include <iostream>
 #include <memory>
 #include <curl/curl.h>
-#include <nlohmann/json.hpp>
+#include "single_include/nlohmann/json.hpp"
 
 using json = nlohmann::json;
 

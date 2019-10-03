@@ -10,7 +10,7 @@ compile with:
 #include <iostream>
 #include <memory>
 #include <curl/curl.h>
-#include <nlohmann/json.hpp>
+#include "single_include/nlohmann/json.hpp"
 
 using json = nlohmann::json;
 
@@ -54,7 +54,7 @@ std::string get_url(std::string const& url)
     return data;
 }
 
-int main()
+int main9()
 {
     // query is the desired search paramter
     std::string query {"test"};
