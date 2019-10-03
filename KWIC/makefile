@@ -1,7 +1,7 @@
-KWIC : main.o LineStorage.o CircularShifter.o Alphabetizer.o I_Input.o Input.o Text_Input.o Output.o
-	g++ -std=c++14 -o KWIC main.o LineStorage.o CircularShifter.o Alphabetizer.o I_Input.o Input.o Text_Input.o Output.o -g
+KWIC : main.o LineStorage.o CircularShifter.o Alphabetizer.o I_Input.o Input.o Text_Input.o Output.o Text_Output.o
+	g++ -std=c++14 -o KWIC main.o LineStorage.o CircularShifter.o Alphabetizer.o I_Input.o Input.o Text_Input.o Output.o Text_Output.o -g
 
-main.o : main.cpp CircularShifter.hpp Alphabetizer.hpp Text_Input.hpp
+main.o : main.cpp CircularShifter.hpp Alphabetizer.hpp Text_Input.hpp Output.hpp
 	g++ -std=c++14 -c main.cpp -g -Wall
 LineStorage.o : LineStorage.cpp LineStorage.hpp
 	g++ -std=c++14 -c LineStorage.cpp -g -Wall
@@ -17,10 +17,12 @@ Text_Input.o : Text_Input.cpp Text_Input.hpp Input.hpp
 	g++ -std=c++14 -c Text_Input.cpp -g -Wall
 Output.o : Output.cpp Output.hpp
 	g++ -std=c++14 -c Output.cpp -g -Wall
+Text_Output.o : Text_Output.cpp Text_Output.cpp Output.hpp
+	g++ -std=c++14 -c Text_Output.cpp -g -Wall
 
 
 clean :
 #windows
 #del KWIC main.o LineStorage.o CircularShifter.o Alphabetizer.o I_Input.o Input.o Text_Input.o
 #linux
-	rm KWIC main.o LineStorage.o CircularShifter.o Alphabetizer.o I_Input.o Input.o Text_Input.o Output.o
+	rm KWIC main.o LineStorage.o CircularShifter.o Alphabetizer.o I_Input.o Input.o Text_Input.o Output.o Text_Output.o
