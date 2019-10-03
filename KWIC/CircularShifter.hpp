@@ -34,7 +34,7 @@ public:
     CircularShifter(vector<string> & originalLineVector);   //1 param Constructor
     
     
-    ~CircularShifter() = default;                      //Destructor
+    virtual ~CircularShifter() = default;                      //Destructor
 };
 
 #endif /* CircularShifter_hpp */
