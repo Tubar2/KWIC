@@ -17,5 +17,21 @@
 #define Output_hpp
 
 #include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+class Output {
+    
+protected:
+    vector<string> & data;
+    string outputTitle;
+    
+public:
+    
+    Output(string outputName, vector<string> & data);
+};
 
 #endif /* Output_hpp */

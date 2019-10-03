@@ -30,11 +30,16 @@ protected:
     
 public:
     
+    //TODO: Change read func
     virtual void read(LineStorage & data) const override;
     
-    virtual void setup();
+    //TODO: Change to pure virual func -> maybe declare it in Interface
+    virtual void setup(); //Function to be overriden
     
+    //MARK: Destructor
     virtual ~Input() = default;
+    
+    
     //MARK: Constructor
     Input(string inputName, string format, LineStorage & data);   //Constructor
 };

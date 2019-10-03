@@ -13,7 +13,7 @@
 #include <algorithm>
 #include "CircularShifter.hpp"
 #include "Alphabetizer.hpp"
-
+#include "Text_Output.hpp"
 #include "Text_Input.hpp"
 
 using namespace std;
@@ -27,9 +27,22 @@ string testGetWordFromString(int position, string line);
 void testAlphabetizeData(vector<string> & shiftedVariations);
 void testWithMadeVectors();
 bool testCompareString(string a, string b);
+bool clearPrevEnv(string filepath);
 
 int main(int argc, const char * argv[]) {
     
+    string filepath {"Exits/"}, line{};
+    cout << "Enter output file name: (no txt needed)" << endl;
+    getline(cin, line);
+    
+    filepath += line + ".txt";
+    
+    //TODO: Solution for clearPrevEnv
+    if (!clearPrevEnv(filepath)){
+        exit(3);
+    }
+    
+    //Definig both types of enums
     entryType stops = typeStops;
     entryType inputs = typeInput;
     
@@ -42,26 +55,49 @@ int main(int argc, const char * argv[]) {
     input.setup();
     words.setup();
     
-    //Extracting Words and line
+    //Extracting stop Words
     words.extract(stops);
-    input.extract(inputs);
     
-    //Creating CircularShifter object
-    CircularShifter cs (data.originalLine);
+    //Extracting text
+    do {
+        data.deletePrevInfo();
+        input.extract(inputs); //One line extraction
+        
+        //Creating CircularShifter object pointer
+        CircularShifter * cs = new CircularShifter(data.originalLine);
+        
+        //Creating all shifts for stored line
+        data.shiftedVariations = cs->makeCircularShifts();
+        cout << "Shifts made: " << data.storedLines() << endl;
+        
+        //Creating alphabetizer object pointer
+        Alphabetizer * alph = new Alphabetizer(data);
+        
+        //Removing stops and alphabetizing
+        alph->removeStops();
+        alph->alphabetiseData();
+        
+        //Creating output object
+        Text_Output to(filepath, data.shiftedVariations);
+        
+        to.createFile();
+        to.printOutput();
+        
+        //Closing files
+        to.closeFile();
+        
+        //Deleting pointers
+        delete cs;
+        delete alph;
+        
+    } while (!input.reachedEOF());
     
-    //Creating all shifts for stored line
-    data.shiftedVariations = cs.makeCircularShifts();
-    cout << "Shifts made: " << data.storedLines() << endl;
+    //MARK: Perguntas pro prof
+        // - Objeto criado em um do while sai do escopo nas seguintes iterações quando criado com outros parâmetros?
     
-    //Creating alphabetizer
-    Alphabetizer alph(data);
-    
-    //Removing stops and alphabetizing
-    alph.removeStops();
-    alph.alphabetiseData();
-    
-    cout << "=======================" << endl;
-    printVector(data.shiftedVariations);
+    //Closing others
+    input.closeFile();
+    words.closeFile();
     
     return 0;
 }
@@ -218,4 +254,16 @@ bool testCompareString(string a, string b){
 //MARK: Sorting
 void testAlphabetizeData(vector<string> & shiftedVariations){
     sort(shiftedVariations.begin(), shiftedVariations.end(), testCompareString);
+}
+
+//MARK: clearPrevEnv
+bool clearPrevEnv(string filepath){
+    
+    bool opened {};
+    ifstream a{};
+    
+    a.open(filepath, std::ifstream::out | std::ifstream::trunc);
+    opened = a.is_open();
+    a.close();
+    return opened;
 }

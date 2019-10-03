@@ -85,6 +85,11 @@ void Text_Input::extractStops(){
     }
 }
 
+//MARK:
+void Text_Input::closeFile(){
+    in_file.close();
+}
+
 //MARK: Constructor
 Text_Input::Text_Input(string filename, LineStorage & data)
 :Input(filename, ".txt", data)
