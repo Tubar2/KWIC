@@ -1,24 +1,27 @@
+//
+//  DBLP_Input.cpp
+//  KWIC
+//
+//  Created by Gianlucas dos Santos on 06/10/19.
+//  Copyright © 2019 Gianlucas dos Santos. All rights reserved.
+//
+
 #include "DBLP_Input.hpp"
 
 //MARK: Constructor
-DBLP_Input::DBLP_Input(string query, LineStorage & data)
-:Input(query, "json", data)
+DBLP_Input::DBLP_Input(string query, LineStorage & data, type entryType)
+:Input(query, data, entryType)
 {
     cout << "Created DBLP_Input object for reading." << endl;
 }
 
-//TODO: Useless
-void DBLP_Input::read(LineStorage & data) const{
-    std::cout << "yay";
-}
-
 //MARK: Setup
-void DBLP_Input::setup(){
-    Input::setup();
+bool DBLP_Input::setup(){
     
     cout << "Setting up DBLP Input enviroment." << endl;
     search_and_store();
 
+    return true;
 }
 //Extracts line : delimiter '\n'
 void DBLP_Input::extract(){  
@@ -85,9 +88,9 @@ std::string DBLP_Input::get_url(std::string const& url)
 void DBLP_Input::search_and_store(){
 
     // query is the desired search paramter
-    std::string query = Input::filename;
+    std::string query = Input::filepath;
 
-    // building url
+    // bufilepathrl
     std::string url;
     url.append("https://dblp.org/search/publ/api?q=");
     url.append(query);
@@ -109,11 +112,7 @@ void DBLP_Input::search_and_store(){
         all_titles_vector.insert(all_titles_vector.end(),str);
 
     }
-    title_count = all_titles_vector.size();
+    title_count = static_cast<int>(all_titles_vector.size());
     title_iterator = 0;
 
-    //TODO : apagar isso aqui
-    /*//imprimir titulos no terminal
-    for (auto it = all_titles_vector.begin(); it != all_titles_vector.end(); ++it)
-        std::cout << (*it) << std::endl;*/
 }

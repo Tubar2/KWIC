@@ -1,3 +1,11 @@
+//
+//  DBLP_Input.cpp
+//  KWIC
+//
+//  Created by Gianlucas dos Santos on 06/10/19.
+//  Copyright © 2019 Gianlucas dos Santos. All rights reserved.
+//
+
 #ifndef DBLP_INPUT_H
 #define DBLP_INPUT_H
 
@@ -12,7 +20,7 @@
 #include <iostream>
 #include <memory>
 #include <curl/curl.h>
-#include "single_include/nlohmann/json.hpp"
+#include "../single_include/nlohmann/json.hpp"
 
 using json = nlohmann::json;
 
@@ -20,19 +28,16 @@ class DBLP_Input : public Input{
 public:
 
     //MARK: Constructor
-    DBLP_Input(string query, LineStorage & data);
-
-    //TODO: Essa função não faz nada - deletar ou procurar alguma utilidade.
-    virtual void read(LineStorage & data) const override;
+    DBLP_Input(string query, LineStorage & data, type entryType);
 
     //MARK: Setup
-    virtual void setup() override;
+    bool setup() override;
 
     //Extracts line : delimiter '\n'
-    void extract();
+    void extract() override;
 
     // return true when all titles in all_titles_vector have been accessed
-    bool reachedEND();
+    bool reachedEND() override;
 
     //MARK: Destructor
     virtual ~DBLP_Input() = default;
