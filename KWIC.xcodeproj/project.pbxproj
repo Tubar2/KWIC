@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D73CB49E234AA6AB008FD481 /* Tests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D73CB49D234AA6AB008FD481 /* Tests.cpp */; };
 		D7538206234A229F00DF5251 /* Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7538204234A229F00DF5251 /* Input.cpp */; };
 		D7538209234A294500DF5251 /* I_Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7538207234A294500DF5251 /* I_Input.cpp */; };
 		D7AB4E692346662D005E5783 /* libcurl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D7AB4E682346662D005E5783 /* libcurl.dylib */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		D73CB49C234A99E6008FD481 /* exit4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = exit4.txt; sourceTree = "<group>"; };
+		D73CB49D234AA6AB008FD481 /* Tests.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Tests.cpp; sourceTree = "<group>"; };
 		D7538204234A229F00DF5251 /* Input.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Input.cpp; sourceTree = "<group>"; };
 		D7538205234A229F00DF5251 /* Input.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Input.hpp; sourceTree = "<group>"; };
 		D7538207234A294500DF5251 /* I_Input.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = I_Input.cpp; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				D7538203234A163500DF5251 /* Output */,
 				D7D33483234644A2006FF606 /* Resources */,
 				D7D33494234644A2006FF606 /* Exits */,
+				D73CB49D234AA6AB008FD481 /* Tests.cpp */,
 			);
 			path = KWIC;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				D7D334A2234644A3006FF606 /* Text_Output.cpp in Sources */,
 				D7538206234A229F00DF5251 /* Input.cpp in Sources */,
 				D7D3349C234644A3006FF606 /* main_dblp.cpp in Sources */,
+				D73CB49E234AA6AB008FD481 /* Tests.cpp in Sources */,
 				D7D334A4234644A3006FF606 /* CircularShifter.cpp in Sources */,
 				D7538209234A294500DF5251 /* I_Input.cpp in Sources */,
 				D7D334A1234644A3006FF606 /* Output.cpp in Sources */,
