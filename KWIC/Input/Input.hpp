@@ -22,7 +22,6 @@ private:
     virtual void extractStops() = 0; //Extracts all stop words in a vector<string>
     virtual void extractMain() = 0;  //Extracts line from main file and separates each word in a vector<string>
     virtual bool setup() = 0;        //Trys to open
-    virtual bool reachedEND() = 0; //Checks if end was reached
     virtual void finish() = 0;       //Finishes document reading
     
 protected:
