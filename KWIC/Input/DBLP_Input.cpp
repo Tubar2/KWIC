@@ -28,19 +28,19 @@ void DBLP_Input::extract(){
     string line;
     
     line = all_titles_vector.at(title_iterator);
-    data.wholeOriginalLine = line;
+    data.originalLine_String = line;
     
     string tempWord {};
     for (auto c : line) {
         if (c == ' ') {
-            data.originalLine.push_back(tempWord);
+            data.originalLine_Vector.push_back(tempWord);
             tempWord = "";
         }
         else{
             tempWord += c;
         }
     }
-    data.originalLine.push_back(tempWord);
+    data.originalLine_Vector.push_back(tempWord);
 
     title_iterator++;
 }

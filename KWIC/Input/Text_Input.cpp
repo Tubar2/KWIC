@@ -29,19 +29,19 @@ void Text_Input::extractMain(){  //Extracts line : delimiter '\n'
     string line {};
     
     getline(in_file, line);
-    data.wholeOriginalLine = line;
+    data.originalLine_String = line;
     
     string tempWord {};
     for (auto c : line) {
         if (c == ' ') {
-            data.originalLine.push_back(tempWord);
+            data.originalLine_Vector.push_back(tempWord);
             tempWord = "";
         }
         else{
             tempWord += c;
         }
     }
-    data.originalLine.push_back(tempWord);
+    data.originalLine_Vector.push_back(tempWord);
 }
 
 void Text_Input::extractStops(){

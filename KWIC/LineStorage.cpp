@@ -12,7 +12,7 @@
 // MARK: wordsInLine
 int LineStorage::wordsInLine(){
 
-    return static_cast<int>(originalLine.size());
+    return static_cast<int>(originalLine_Vector.size());
 }
 
 // MARK: storedLines
@@ -31,7 +31,7 @@ int LineStorage::charsInWord(int position){
     int curPosition {0}, numChars {0};
     string requestedWord {};
     
-    for (auto word : originalLine) {
+    for (auto word : originalLine_Vector) {
         if (curPosition == position) {
             requestedWord = word;
         }
@@ -49,7 +49,7 @@ string LineStorage::getWord(int position){
     int curPosition {0};
     string requestedWord {};
     
-    for (auto word : originalLine) {
+    for (auto word : originalLine_Vector) {
         if (curPosition == position) {
             requestedWord = word;
             break;
@@ -66,7 +66,7 @@ char LineStorage::getChar(int wordPosition, int charPosition){
     int curWordPosition {0}, curCharPosition {0};
     char requestedChar{};
     
-    for (auto word : originalLine) {
+    for (auto word : originalLine_Vector) {
         if (curWordPosition == wordPosition) {
             for (auto curChar : word) {
                 if (curCharPosition == charPosition) {
@@ -107,8 +107,8 @@ string LineStorage::getWordFromString(int position, string line){
 
 //MARK: deletePrevInfo
 void LineStorage::deletePrevInfo(){
-    wholeOriginalLine = "";
-    originalLine.clear();
+    originalLine_String = "";
+    originalLine_Vector.clear();
     shiftedVariations.clear();
     
 }
