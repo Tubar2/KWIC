@@ -11,7 +11,7 @@
 //MARK: createFile
 void Text_Output::createFile(){
     
-    out_file.open(outputTitle, ios_base::app);
+    out_file.open(outputTitle, ios_base::trunc);
     
     if (!out_file.is_open()) {
         cout << "Error creating output file." << endl;

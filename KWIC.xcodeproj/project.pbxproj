@@ -7,19 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D7538206234A229F00DF5251 /* Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7538204234A229F00DF5251 /* Input.cpp */; };
+		D7538209234A294500DF5251 /* I_Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7538207234A294500DF5251 /* I_Input.cpp */; };
 		D7AB4E692346662D005E5783 /* libcurl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D7AB4E682346662D005E5783 /* libcurl.dylib */; };
-		D7D3349C234644A3006FF606 /* main_dblp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7D3347A234644A2006FF606 /* main_dblp.cpp */; settings = {COMPILER_FLAGS = "-lcurl"; }; };
-		D7D3349D234644A3006FF606 /* Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7D3347C234644A2006FF606 /* Input.cpp */; };
-		D7D3349E234644A3006FF606 /* dblp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7D33480234644A2006FF606 /* dblp.cpp */; settings = {COMPILER_FLAGS = "-lcurl"; }; };
-		D7D3349F234644A3006FF606 /* makefile in Sources */ = {isa = PBXBuildFile; fileRef = D7D33481234644A2006FF606 /* makefile */; };
+		D7D3349C234644A3006FF606 /* main_dblp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7D3347A234644A2006FF606 /* main_dblp.cpp */; };
+		D7D3349E234644A3006FF606 /* dblp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7D33480234644A2006FF606 /* dblp.cpp */; };
 		D7D334A0234644A3006FF606 /* Text_Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7D33488234644A2006FF606 /* Text_Input.cpp */; };
 		D7D334A1234644A3006FF606 /* Output.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7D33489234644A2006FF606 /* Output.cpp */; };
 		D7D334A2234644A3006FF606 /* Text_Output.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7D3348A234644A2006FF606 /* Text_Output.cpp */; };
 		D7D334A3234644A3006FF606 /* LineStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7D3348D234644A2006FF606 /* LineStorage.cpp */; };
 		D7D334A4234644A3006FF606 /* CircularShifter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7D3348E234644A2006FF606 /* CircularShifter.cpp */; };
 		D7D334A5234644A3006FF606 /* Alphabetizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7D33490234644A2006FF606 /* Alphabetizer.cpp */; };
-		D7D334A6234644A3006FF606 /* DBLP_Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7D33491234644A2006FF606 /* DBLP_Input.cpp */; settings = {COMPILER_FLAGS = "-lcurl"; }; };
-		D7D334A7234644A3006FF606 /* I_Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7D33492234644A2006FF606 /* I_Input.cpp */; };
+		D7D334A6234644A3006FF606 /* DBLP_Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7D33491234644A2006FF606 /* DBLP_Input.cpp */; };
 		D7D334A8234644A3006FF606 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7D33493234644A2006FF606 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +35,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D73CB49C234A99E6008FD481 /* exit4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = exit4.txt; sourceTree = "<group>"; };
+		D7538204234A229F00DF5251 /* Input.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Input.cpp; sourceTree = "<group>"; };
+		D7538205234A229F00DF5251 /* Input.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Input.hpp; sourceTree = "<group>"; };
+		D7538207234A294500DF5251 /* I_Input.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = I_Input.cpp; sourceTree = "<group>"; };
+		D7538208234A294500DF5251 /* I_Input.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = I_Input.hpp; sourceTree = "<group>"; };
 		D793D40323424FD200977DB7 /* KWIC */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = KWIC; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7AB4E682346662D005E5783 /* libcurl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libcurl.dylib; sourceTree = "<group>"; };
 		D7AB4E6F2346674B005E5783 /* qlqr_coisa.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = qlqr_coisa.txt; sourceTree = "<group>"; };
@@ -47,12 +51,9 @@
 		D7D33479234644A2006FF606 /* LineStorage.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LineStorage.hpp; sourceTree = "<group>"; };
 		D7D3347A234644A2006FF606 /* main_dblp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main_dblp.cpp; sourceTree = "<group>"; };
 		D7D3347B234644A2006FF606 /* CircularShifter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CircularShifter.hpp; sourceTree = "<group>"; };
-		D7D3347C234644A2006FF606 /* Input.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Input.cpp; sourceTree = "<group>"; };
 		D7D3347D234644A2006FF606 /* Alphabetizer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Alphabetizer.hpp; sourceTree = "<group>"; };
 		D7D3347E234644A2006FF606 /* DBLP_Input.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DBLP_Input.hpp; sourceTree = "<group>"; };
-		D7D3347F234644A2006FF606 /* I_Input.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = I_Input.hpp; sourceTree = "<group>"; };
 		D7D33480234644A2006FF606 /* dblp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dblp.cpp; sourceTree = "<group>"; };
-		D7D33481234644A2006FF606 /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
 		D7D33482234644A2006FF606 /* Text_Output.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Text_Output.hpp; sourceTree = "<group>"; };
 		D7D33484234644A2006FF606 /* nltkstops.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = nltkstops.txt; sourceTree = "<group>"; };
 		D7D33485234644A2006FF606 /* myfile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = myfile.txt; sourceTree = "<group>"; };
@@ -65,10 +66,8 @@
 		D7D3348C234644A2006FF606 /* Output.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Output.hpp; sourceTree = "<group>"; };
 		D7D3348D234644A2006FF606 /* LineStorage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LineStorage.cpp; sourceTree = "<group>"; };
 		D7D3348E234644A2006FF606 /* CircularShifter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CircularShifter.cpp; sourceTree = "<group>"; };
-		D7D3348F234644A2006FF606 /* Input.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Input.hpp; sourceTree = "<group>"; };
 		D7D33490234644A2006FF606 /* Alphabetizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Alphabetizer.cpp; sourceTree = "<group>"; };
 		D7D33491234644A2006FF606 /* DBLP_Input.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DBLP_Input.cpp; sourceTree = "<group>"; };
-		D7D33492234644A2006FF606 /* I_Input.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = I_Input.cpp; sourceTree = "<group>"; };
 		D7D33493234644A2006FF606 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		D7D33495234644A2006FF606 /* exit.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = exit.txt; sourceTree = "<group>"; };
 		D7D33498234644A2006FF606 /* json.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = json.hpp; sourceTree = "<group>"; };
@@ -87,6 +86,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D7538202234A15AB00DF5251 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				D7D33491234644A2006FF606 /* DBLP_Input.cpp */,
+				D7D3347E234644A2006FF606 /* DBLP_Input.hpp */,
+				D7D33488234644A2006FF606 /* Text_Input.cpp */,
+				D7D3348B234644A2006FF606 /* Text_Input.hpp */,
+				D7538204234A229F00DF5251 /* Input.cpp */,
+				D7538205234A229F00DF5251 /* Input.hpp */,
+				D7538207234A294500DF5251 /* I_Input.cpp */,
+				D7538208234A294500DF5251 /* I_Input.hpp */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
+		D7538203234A163500DF5251 /* Output */ = {
+			isa = PBXGroup;
+			children = (
+				D7D3348A234644A2006FF606 /* Text_Output.cpp */,
+				D7D33482234644A2006FF606 /* Text_Output.hpp */,
+				D7D33489234644A2006FF606 /* Output.cpp */,
+				D7D3348C234644A2006FF606 /* Output.hpp */,
+			);
+			path = Output;
+			sourceTree = "<group>";
+		};
 		D793D3FA23424FD200977DB7 = {
 			isa = PBXGroup;
 			children = (
@@ -117,31 +142,20 @@
 		D7D33478234644A2006FF606 /* KWIC */ = {
 			isa = PBXGroup;
 			children = (
-				D7D33479234644A2006FF606 /* LineStorage.hpp */,
-				D7D3347A234644A2006FF606 /* main_dblp.cpp */,
-				D7D3347B234644A2006FF606 /* CircularShifter.hpp */,
-				D7D3347C234644A2006FF606 /* Input.cpp */,
-				D7D3347D234644A2006FF606 /* Alphabetizer.hpp */,
-				D7D3347E234644A2006FF606 /* DBLP_Input.hpp */,
-				D7D3347F234644A2006FF606 /* I_Input.hpp */,
-				D7D33480234644A2006FF606 /* dblp.cpp */,
-				D7D33481234644A2006FF606 /* makefile */,
-				D7D33482234644A2006FF606 /* Text_Output.hpp */,
-				D7D33483234644A2006FF606 /* Resources */,
-				D7D33488234644A2006FF606 /* Text_Input.cpp */,
-				D7D33489234644A2006FF606 /* Output.cpp */,
-				D7D3348A234644A2006FF606 /* Text_Output.cpp */,
-				D7D3348B234644A2006FF606 /* Text_Input.hpp */,
-				D7D3348C234644A2006FF606 /* Output.hpp */,
-				D7D3348D234644A2006FF606 /* LineStorage.cpp */,
-				D7D3348E234644A2006FF606 /* CircularShifter.cpp */,
-				D7D3348F234644A2006FF606 /* Input.hpp */,
-				D7D33490234644A2006FF606 /* Alphabetizer.cpp */,
-				D7D33491234644A2006FF606 /* DBLP_Input.cpp */,
-				D7D33492234644A2006FF606 /* I_Input.cpp */,
 				D7D33493234644A2006FF606 /* main.cpp */,
-				D7D33494234644A2006FF606 /* Exits */,
+				D7D3347A234644A2006FF606 /* main_dblp.cpp */,
+				D7D33480234644A2006FF606 /* dblp.cpp */,
+				D7D33490234644A2006FF606 /* Alphabetizer.cpp */,
+				D7D3347D234644A2006FF606 /* Alphabetizer.hpp */,
+				D7D3348D234644A2006FF606 /* LineStorage.cpp */,
+				D7D33479234644A2006FF606 /* LineStorage.hpp */,
+				D7D3348E234644A2006FF606 /* CircularShifter.cpp */,
+				D7D3347B234644A2006FF606 /* CircularShifter.hpp */,
+				D7538202234A15AB00DF5251 /* Input */,
 				D7D33496234644A2006FF606 /* single_include */,
+				D7538203234A163500DF5251 /* Output */,
+				D7D33483234644A2006FF606 /* Resources */,
+				D7D33494234644A2006FF606 /* Exits */,
 			);
 			path = KWIC;
 			sourceTree = "<group>";
@@ -161,6 +175,7 @@
 		D7D33494234644A2006FF606 /* Exits */ = {
 			isa = PBXGroup;
 			children = (
+				D73CB49C234A99E6008FD481 /* exit4.txt */,
 				D7AB4E7223466792005E5783 /* exit3.txt */,
 				D7AB4E702346674B005E5783 /* exit2.txt */,
 				D7AB4E712346674B005E5783 /* qlqr_coisa_2.txt */,
@@ -258,12 +273,11 @@
 				D7D334A0234644A3006FF606 /* Text_Input.cpp in Sources */,
 				D7D334A3234644A3006FF606 /* LineStorage.cpp in Sources */,
 				D7D334A8234644A3006FF606 /* main.cpp in Sources */,
-				D7D3349F234644A3006FF606 /* makefile in Sources */,
 				D7D334A2234644A3006FF606 /* Text_Output.cpp in Sources */,
-				D7D3349D234644A3006FF606 /* Input.cpp in Sources */,
-				D7D334A7234644A3006FF606 /* I_Input.cpp in Sources */,
+				D7538206234A229F00DF5251 /* Input.cpp in Sources */,
 				D7D3349C234644A3006FF606 /* main_dblp.cpp in Sources */,
 				D7D334A4234644A3006FF606 /* CircularShifter.cpp in Sources */,
+				D7538209234A294500DF5251 /* I_Input.cpp in Sources */,
 				D7D334A1234644A3006FF606 /* Output.cpp in Sources */,
 				D7D3349E234644A3006FF606 /* dblp.cpp in Sources */,
 				D7D334A5234644A3006FF606 /* Alphabetizer.cpp in Sources */,
