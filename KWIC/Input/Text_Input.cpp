@@ -74,7 +74,7 @@ Text_Input::Text_Input(LineStorage & data, type entryType)
         default:
             break;
     }
-    std::cout << "Enter " << filetype << " file name inside Resources folder:" << std::endl;
+    std::cout << "Enter " << filetype << " file name inside Resources folder: (no .json needed)" << std::endl;
     getline(std::cin, line);
     
     folder += line;
