@@ -21,10 +21,9 @@ protected:
 private:
     void setup() override;
     void print() override;
+    void close() override;
     
 public:
-    
-    void closeFile();
     
     //MARK: Constructor
     Text_Output(string filename, vector<string> & data);

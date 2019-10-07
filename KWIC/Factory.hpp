@@ -65,7 +65,7 @@ public:
         delete alph;
         
         //Closing
-        printer.closeFile();
+        printer.terminate();
         reader_m.close();
     }
 };

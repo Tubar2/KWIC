@@ -16,6 +16,7 @@
 #include "LineStorage.hpp"
 #include "Output/Text_Output.hpp"
 #include "Input/Text_Input.hpp"
+#include "Output/Terminal_Output.hpp"
 
 using namespace std;
 
@@ -37,7 +38,7 @@ int main(int argc, const char * argv[]) {
     Text_Input words("Resources/mystops.txt", data, stops);
     
     //Creating output object
-    Text_Output to(filepath, data.shiftedVariations);
+    Terminal_Output to(data.shiftedVariations);
     
     Factory factory{input, words, to, data};
     factory.run();

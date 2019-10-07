@@ -16,6 +16,7 @@ public:
     
     virtual void assemble() = 0;
     virtual void printContent() = 0;
+    virtual void terminate() = 0;
     
     //MARK: Destructor
     virtual ~I_Output() = default;

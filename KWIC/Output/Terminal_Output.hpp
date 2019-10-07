@@ -18,6 +18,12 @@ private:
     
     void setup() override;
     void print() override;
+    void close() override;
+    
+public:
+    
+    //MARK: Constructor
+    Terminal_Output(vector<string> &data);
     
 };
 

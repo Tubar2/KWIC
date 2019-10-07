@@ -17,6 +17,10 @@ void Output::printContent(){
     print();
 }
 
+void Output::terminate(){
+    close();
+}
+
 //MARK: Constructor
 Output::Output(string outputName, vector<string> & data)
 :data(data), outputTitle(outputName){

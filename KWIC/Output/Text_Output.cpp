@@ -30,7 +30,7 @@ void Text_Output::print(){
 }
 
 //MARK: closeFile
-void Text_Output::closeFile(){
+void Text_Output::close(){
     out_file.close();
 }
 

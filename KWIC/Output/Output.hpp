@@ -29,6 +29,7 @@ class Output : public I_Output {
 private:
     virtual void setup() = 0;
     virtual void print() = 0;
+    virtual void close() = 0;
     
 protected:
     vector<string> & data;
@@ -38,6 +39,7 @@ public:
     
     void assemble() override;
     void printContent() override;
+    void terminate() override;
     
     //MARK: Constructor
     Output(string outputName, vector<string> & data);
