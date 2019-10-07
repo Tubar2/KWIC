@@ -13,14 +13,16 @@
 
 using namespace std;
 
-class Text_Output: Output {
+class Text_Output: public Output {
     
+protected:
     ofstream out_file {};
     
-public:
+private:
+    void setup() override;
+    void print() override;
     
-    void createFile();
-    void printOutput();
+public:
     
     void closeFile();
     
