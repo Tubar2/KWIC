@@ -9,15 +9,15 @@
 #include "JSONText_Input.hpp"
 
 //MARK: Constructor
-JSON_Input::JSON_Input(string query, LineStorage & data, type entryType)
+JSON_Input::JSON_Input(std::string query, LineStorage & data, type entryType)
 :Input(query, data, entryType)
 {
-    cout << "Created JSON_Input object for reading." << endl;
+    std::cout << "Created JSON_Input object for reading." << std::endl;
 }
 
 bool JSON_Input::setup()
 {
-    cout << "Setting up JSON Input enviroment." << endl;
+    std::cout << "Setting up JSON Input enviroment." << std::endl;
     
     in_file.open(filepath);
     
@@ -25,7 +25,7 @@ bool JSON_Input::setup()
 }
 
 void JSON_Input::extractStops(){
-    string line {};
+    std::string line {};
     std::stringstream sstr;
     sstr << in_file.rdbuf();
     json j = json::parse(sstr.str());

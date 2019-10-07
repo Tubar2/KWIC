@@ -31,12 +31,12 @@ class DBLP_Input : public Input{
 public:
 
     //MARK: Constructor
-    DBLP_Input(string query, LineStorage & data, type entryType);
+    DBLP_Input(std::string query, LineStorage & data, type entryType);
 
     //MARK: Setup
     bool setup() override;
 
-    void extractStops() override; //Extracts all stop words in a vector<string>
+    void extractStops() override; //Extracts all stop words in a std::vector<std::string>
 
     //Extracts line : delimiter '\n'
     void extractMain() override; // search for query in DBLP api and stores all titles in a vector of strings

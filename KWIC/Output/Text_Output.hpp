@@ -11,12 +11,10 @@
 
 #include "Output.hpp"
 
-using namespace std;
-
 class Text_Output: public Output {
     
 protected:
-    ofstream out_file {};
+    std::ofstream out_file {};
     
 private:
     void setup() override;
@@ -26,7 +24,7 @@ private:
 public:
     
     //MARK: Constructor
-    Text_Output(string filename, vector<string> & data);
+    Text_Output(std::string filename, std::vector<std::string> & data);
     
 };
 

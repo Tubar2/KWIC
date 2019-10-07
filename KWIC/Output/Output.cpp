@@ -22,7 +22,7 @@ void Output::terminate(){
 }
 
 //MARK: Constructor
-Output::Output(string outputName, vector<string> & data)
+Output::Output(std::string outputName, std::vector<std::string> & data)
 :data(data), outputTitle(outputName){
-    cout << "Output object created." << endl;
+    std::cout << "Output object created." << std::endl;
 }
