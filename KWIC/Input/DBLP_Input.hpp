@@ -15,7 +15,7 @@
 
 #include "I_Input.hpp"
 #include "Input.hpp"
-#include "LineStorage.hpp"
+#include "../LineStorage.hpp"
 
 #include <iostream>
 #include <memory>
