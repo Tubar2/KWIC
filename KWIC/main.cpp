@@ -12,15 +12,13 @@
 #include <vector>
 #include <algorithm>
 
-#include "CircularShifter.hpp"
-#include "Alphabetizer.hpp"
+#include "Factory.hpp"
 #include "LineStorage.hpp"
 #include "Output/Text_Output.hpp"
 #include "Input/Text_Input.hpp"
 
 using namespace std;
 
-void printVector(vector<string> myvector);
 string createFilepath();
 
 int main(int argc, const char * argv[]) {
@@ -34,63 +32,20 @@ int main(int argc, const char * argv[]) {
     //Creating Line Storage
     LineStorage data;
     
-    //Creating and setting up new Input objects
+    //Creating new Input objects
     Text_Input input("Resources/myfile.txt", data, inputs);
     Text_Input words("Resources/mystops.txt", data, stops);
-    input.open();
-    words.open();
-    
-    //Extracting stop Words then closing reader
-    words.extract();
-    words.close();
-    
-    //Creating CircularShifter object pointer
-    CircularShifter * cs = new CircularShifter(data.originalLine_Vector);
-    
-    //Creating alphabetizer object pointer
-    Alphabetizer * alph = new Alphabetizer(data);
     
     //Creating output object
     Text_Output to(filepath, data.shiftedVariations);
     
-    to.createFile();
-    
-    //Extracting text 1 line at a time
-    do {
-        data.deletePrevInfo();
-        input.extract();      //One line extraction
-        
-        //Creating all shifts for stored line
-        data.shiftedVariations = cs->makeCircularShifts();
-        cout << "Shifts made: " << data.storedLines() << endl;
-        
-        //Removing stops and alphabetizing
-        alph->removeStops();
-        alph->alphabetiseData();
-        
-        to.printOutput();
-        
-    } while (!input.reachedEND());
-    
-    //Deleting pointers
-    delete cs;
-    delete alph;
-    
-    //Closing
-    to.closeFile();
-    input.close();
+    Factory factory{input, words, to, data};
+    factory.run();
     
     return 0;
 }
 
-//MARK: printVector
-void printVector(vector<string> myvector){
-    for (auto mystr : myvector) {
-        cout << mystr << endl;
-    }
-}
-
-//MARK: createFileath
+//MARK: createFilepath
 string createFilepath(){
     string filepath {"Exits/"}, line{};
     cout << "Enter output file name: (no txt needed)" << endl;

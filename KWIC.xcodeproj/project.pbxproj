@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D70ACB93234BB4AD00C25FB8 /* JSONText_Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D70ACB91234BB4AD00C25FB8 /* JSONText_Input.cpp */; };
 		D73CB49E234AA6AB008FD481 /* Tests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D73CB49D234AA6AB008FD481 /* Tests.cpp */; };
 		D7538206234A229F00DF5251 /* Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7538204234A229F00DF5251 /* Input.cpp */; };
 		D7538209234A294500DF5251 /* I_Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7538207234A294500DF5251 /* I_Input.cpp */; };
 		D7AB4E692346662D005E5783 /* libcurl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D7AB4E682346662D005E5783 /* libcurl.dylib */; };
-		D7D3349C234644A3006FF606 /* main_dblp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7D3347A234644A2006FF606 /* main_dblp.cpp */; };
-		D7D3349E234644A3006FF606 /* dblp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7D33480234644A2006FF606 /* dblp.cpp */; };
 		D7D334A0234644A3006FF606 /* Text_Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7D33488234644A2006FF606 /* Text_Input.cpp */; };
 		D7D334A1234644A3006FF606 /* Output.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7D33489234644A2006FF606 /* Output.cpp */; };
 		D7D334A2234644A3006FF606 /* Text_Output.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7D3348A234644A2006FF606 /* Text_Output.cpp */; };
@@ -36,6 +35,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D70ACB91234BB4AD00C25FB8 /* JSONText_Input.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JSONText_Input.cpp; sourceTree = "<group>"; };
+		D70ACB92234BB4AD00C25FB8 /* JSONText_Input.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = JSONText_Input.hpp; sourceTree = "<group>"; };
+		D70ACB94234BB58900C25FB8 /* stops.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stops.json; sourceTree = "<group>"; };
+		D70ACB96234BBC7A00C25FB8 /* Factory.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Factory.hpp; sourceTree = "<group>"; };
 		D73CB49C234A99E6008FD481 /* exit4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = exit4.txt; sourceTree = "<group>"; };
 		D73CB49D234AA6AB008FD481 /* Tests.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Tests.cpp; sourceTree = "<group>"; };
 		D7538204234A229F00DF5251 /* Input.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Input.cpp; sourceTree = "<group>"; };
@@ -51,11 +54,9 @@
 		D7D33476234644A2006FF606 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D7D33477234644A2006FF606 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D7D33479234644A2006FF606 /* LineStorage.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LineStorage.hpp; sourceTree = "<group>"; };
-		D7D3347A234644A2006FF606 /* main_dblp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main_dblp.cpp; sourceTree = "<group>"; };
 		D7D3347B234644A2006FF606 /* CircularShifter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CircularShifter.hpp; sourceTree = "<group>"; };
 		D7D3347D234644A2006FF606 /* Alphabetizer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Alphabetizer.hpp; sourceTree = "<group>"; };
 		D7D3347E234644A2006FF606 /* DBLP_Input.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DBLP_Input.hpp; sourceTree = "<group>"; };
-		D7D33480234644A2006FF606 /* dblp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dblp.cpp; sourceTree = "<group>"; };
 		D7D33482234644A2006FF606 /* Text_Output.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Text_Output.hpp; sourceTree = "<group>"; };
 		D7D33484234644A2006FF606 /* nltkstops.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = nltkstops.txt; sourceTree = "<group>"; };
 		D7D33485234644A2006FF606 /* myfile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = myfile.txt; sourceTree = "<group>"; };
@@ -93,6 +94,8 @@
 			children = (
 				D7D33491234644A2006FF606 /* DBLP_Input.cpp */,
 				D7D3347E234644A2006FF606 /* DBLP_Input.hpp */,
+				D70ACB91234BB4AD00C25FB8 /* JSONText_Input.cpp */,
+				D70ACB92234BB4AD00C25FB8 /* JSONText_Input.hpp */,
 				D7D33488234644A2006FF606 /* Text_Input.cpp */,
 				D7D3348B234644A2006FF606 /* Text_Input.hpp */,
 				D7538204234A229F00DF5251 /* Input.cpp */,
@@ -145,20 +148,19 @@
 			isa = PBXGroup;
 			children = (
 				D7D33493234644A2006FF606 /* main.cpp */,
-				D7D3347A234644A2006FF606 /* main_dblp.cpp */,
-				D7D33480234644A2006FF606 /* dblp.cpp */,
 				D7D33490234644A2006FF606 /* Alphabetizer.cpp */,
 				D7D3347D234644A2006FF606 /* Alphabetizer.hpp */,
 				D7D3348D234644A2006FF606 /* LineStorage.cpp */,
 				D7D33479234644A2006FF606 /* LineStorage.hpp */,
 				D7D3348E234644A2006FF606 /* CircularShifter.cpp */,
 				D7D3347B234644A2006FF606 /* CircularShifter.hpp */,
+				D73CB49D234AA6AB008FD481 /* Tests.cpp */,
 				D7538202234A15AB00DF5251 /* Input */,
 				D7D33496234644A2006FF606 /* single_include */,
 				D7538203234A163500DF5251 /* Output */,
 				D7D33483234644A2006FF606 /* Resources */,
 				D7D33494234644A2006FF606 /* Exits */,
-				D73CB49D234AA6AB008FD481 /* Tests.cpp */,
+				D70ACB96234BBC7A00C25FB8 /* Factory.hpp */,
 			);
 			path = KWIC;
 			sourceTree = "<group>";
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				D7AB4E682346662D005E5783 /* libcurl.dylib */,
+				D70ACB94234BB58900C25FB8 /* stops.json */,
 				D7D33484234644A2006FF606 /* nltkstops.txt */,
 				D7D33485234644A2006FF606 /* myfile.txt */,
 				D7D33486234644A2006FF606 /* mystops.txt */,
@@ -273,17 +276,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7D334A6234644A3006FF606 /* DBLP_Input.cpp in Sources */,
+				D70ACB93234BB4AD00C25FB8 /* JSONText_Input.cpp in Sources */,
 				D7D334A0234644A3006FF606 /* Text_Input.cpp in Sources */,
 				D7D334A3234644A3006FF606 /* LineStorage.cpp in Sources */,
 				D7D334A8234644A3006FF606 /* main.cpp in Sources */,
 				D7D334A2234644A3006FF606 /* Text_Output.cpp in Sources */,
 				D7538206234A229F00DF5251 /* Input.cpp in Sources */,
-				D7D3349C234644A3006FF606 /* main_dblp.cpp in Sources */,
 				D73CB49E234AA6AB008FD481 /* Tests.cpp in Sources */,
 				D7D334A4234644A3006FF606 /* CircularShifter.cpp in Sources */,
 				D7538209234A294500DF5251 /* I_Input.cpp in Sources */,
 				D7D334A1234644A3006FF606 /* Output.cpp in Sources */,
-				D7D3349E234644A3006FF606 /* dblp.cpp in Sources */,
 				D7D334A5234644A3006FF606 /* Alphabetizer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,7 +299,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -355,7 +357,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
