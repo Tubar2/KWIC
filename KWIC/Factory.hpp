@@ -42,7 +42,7 @@ public:
         Alphabetizer * alph = new Alphabetizer(data);
         
         //Opening output file
-        printer.createFile();
+        printer.assemble();
         
         //Extracting text 1 line at a time
         do {
@@ -56,7 +56,7 @@ public:
             alph->removeStops();
             alph->alphabetiseData();
             
-            printer.printOutput();
+            printer.printContent();
             
         } while (!reader_m.reachedEND());
         
