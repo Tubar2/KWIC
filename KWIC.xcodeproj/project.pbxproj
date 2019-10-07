@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D70ACB93234BB4AD00C25FB8 /* JSONText_Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D70ACB91234BB4AD00C25FB8 /* JSONText_Input.cpp */; };
+		D70ACB9A234BCB1500C25FB8 /* Terminal_Output.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D70ACB98234BCB1500C25FB8 /* Terminal_Output.cpp */; };
+		D70ACB9D234BCD8500C25FB8 /* I_Output.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D70ACB9B234BCD8500C25FB8 /* I_Output.cpp */; };
 		D73CB49E234AA6AB008FD481 /* Tests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D73CB49D234AA6AB008FD481 /* Tests.cpp */; };
 		D7538206234A229F00DF5251 /* Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7538204234A229F00DF5251 /* Input.cpp */; };
 		D7538209234A294500DF5251 /* I_Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7538207234A294500DF5251 /* I_Input.cpp */; };
@@ -39,6 +41,10 @@
 		D70ACB92234BB4AD00C25FB8 /* JSONText_Input.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = JSONText_Input.hpp; sourceTree = "<group>"; };
 		D70ACB94234BB58900C25FB8 /* stops.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stops.json; sourceTree = "<group>"; };
 		D70ACB96234BBC7A00C25FB8 /* Factory.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Factory.hpp; sourceTree = "<group>"; };
+		D70ACB98234BCB1500C25FB8 /* Terminal_Output.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Terminal_Output.cpp; sourceTree = "<group>"; };
+		D70ACB99234BCB1500C25FB8 /* Terminal_Output.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Terminal_Output.hpp; sourceTree = "<group>"; };
+		D70ACB9B234BCD8500C25FB8 /* I_Output.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = I_Output.cpp; sourceTree = "<group>"; };
+		D70ACB9C234BCD8500C25FB8 /* I_Output.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = I_Output.hpp; sourceTree = "<group>"; };
 		D73CB49C234A99E6008FD481 /* exit4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = exit4.txt; sourceTree = "<group>"; };
 		D73CB49D234AA6AB008FD481 /* Tests.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Tests.cpp; sourceTree = "<group>"; };
 		D7538204234A229F00DF5251 /* Input.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Input.cpp; sourceTree = "<group>"; };
@@ -113,6 +119,10 @@
 				D7D33482234644A2006FF606 /* Text_Output.hpp */,
 				D7D33489234644A2006FF606 /* Output.cpp */,
 				D7D3348C234644A2006FF606 /* Output.hpp */,
+				D70ACB98234BCB1500C25FB8 /* Terminal_Output.cpp */,
+				D70ACB99234BCB1500C25FB8 /* Terminal_Output.hpp */,
+				D70ACB9B234BCD8500C25FB8 /* I_Output.cpp */,
+				D70ACB9C234BCD8500C25FB8 /* I_Output.hpp */,
 			);
 			path = Output;
 			sourceTree = "<group>";
@@ -155,12 +165,12 @@
 				D7D3348E234644A2006FF606 /* CircularShifter.cpp */,
 				D7D3347B234644A2006FF606 /* CircularShifter.hpp */,
 				D73CB49D234AA6AB008FD481 /* Tests.cpp */,
+				D70ACB96234BBC7A00C25FB8 /* Factory.hpp */,
 				D7538202234A15AB00DF5251 /* Input */,
-				D7D33496234644A2006FF606 /* single_include */,
 				D7538203234A163500DF5251 /* Output */,
+				D7D33496234644A2006FF606 /* single_include */,
 				D7D33483234644A2006FF606 /* Resources */,
 				D7D33494234644A2006FF606 /* Exits */,
-				D70ACB96234BBC7A00C25FB8 /* Factory.hpp */,
 			);
 			path = KWIC;
 			sourceTree = "<group>";
@@ -280,8 +290,10 @@
 				D7D334A0234644A3006FF606 /* Text_Input.cpp in Sources */,
 				D7D334A3234644A3006FF606 /* LineStorage.cpp in Sources */,
 				D7D334A8234644A3006FF606 /* main.cpp in Sources */,
+				D70ACB9A234BCB1500C25FB8 /* Terminal_Output.cpp in Sources */,
 				D7D334A2234644A3006FF606 /* Text_Output.cpp in Sources */,
 				D7538206234A229F00DF5251 /* Input.cpp in Sources */,
+				D70ACB9D234BCD8500C25FB8 /* I_Output.cpp in Sources */,
 				D73CB49E234AA6AB008FD481 /* Tests.cpp in Sources */,
 				D7D334A4234644A3006FF606 /* CircularShifter.cpp in Sources */,
 				D7538209234A294500DF5251 /* I_Input.cpp in Sources */,
