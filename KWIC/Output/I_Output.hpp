@@ -15,7 +15,7 @@ class I_Output {
 public:
     
     virtual void assemble() = 0;
-    virtual void extractContent() = 0;
+    virtual void printContent() = 0;
     
     //MARK: Destructor
     virtual ~I_Output() = default;
