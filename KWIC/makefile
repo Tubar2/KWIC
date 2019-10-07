@@ -5,7 +5,7 @@ Main_dblp : main_dblp.o LineStorage.o CircularShifter.o Alphabetizer.o I_Input.o
 	g++ -std=c++17 -o Main_dblp main_dblp.o LineStorage.o CircularShifter.o Alphabetizer.o I_Input.o Input.o Text_Input.o Output.o Text_Output.o DBLP_Input.o JSONText_Input.o -lcurl -I single_include/ -g -Wall
 
 
-main.o : main.cpp CircularShifter.hpp Alphabetizer.hpp Input/Text_Input.hpp Output/Output.hpp Output/Text_Output.hpp
+main.o : main.cpp CircularShifter.hpp Alphabetizer.hpp Input/Text_Input.hpp Output/Output.hpp Output/Text_Output.hpp Factory.hpp
 	g++ -std=c++17 -c main.cpp -g -Wall
 LineStorage.o : LineStorage.cpp LineStorage.hpp
 	g++ -std=c++17 -c LineStorage.cpp -g -Wall
