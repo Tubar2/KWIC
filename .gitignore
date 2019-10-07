@@ -1,0 +1,5 @@
+*.o
+Main_dblp
+KWIC/KWIC
+KWIC/Exits/gian.txt
+KWIC.xcodeproj/*
