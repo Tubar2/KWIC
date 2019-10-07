@@ -8,9 +8,14 @@
 
 #include "Input.hpp"
 
-//MARK: Constructor
-Input::Input(std::string filepath, LineStorage & data, type entryType)
+//MARK: Constructors
+Input::Input(std::string filepath, LineStorage & data, type entryType) //3 Args Constructor
 : entryType(entryType), filepath(filepath), data(data) {
+}
+
+Input::Input(LineStorage & data, type entryType)
+: entryType(entryType), data(data){
+    
 }
 
 //MARK: Setup
@@ -35,7 +40,7 @@ void Input::extract(){
             cout << "Extracted " << data.storedStops() << " words" << endl;
             break;
         case typeInput:
-            cout << "Extracting line from main program" << endl;
+            /// cout << "Extracting line from main program" << endl;
             extractMain();
         break;
             

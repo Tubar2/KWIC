@@ -42,7 +42,9 @@ public:
     void terminate() override;
     
     //MARK: Constructor
-    Output(string outputName, vector<string> & data);
+    Output(string outputName, vector<string> & data); //2 Args Contructor
+    Output(vector<string> & data); //1 Arg Constructor
+    
 };
 
 #endif /* Output_hpp */

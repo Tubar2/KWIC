@@ -9,9 +9,30 @@
 #include "JSONText_Input.hpp"
 
 //MARK: Constructor
-JSON_Input::JSON_Input(string query, LineStorage & data, type entryType)
-:Input(query, data, entryType)
+JSON_Input::JSON_Input(LineStorage & data, type entryType)
+:Input(data, entryType)
 {
+    
+    string filename {"Resources/"}, line{}, filetype{};
+    
+    switch (entryType) {
+        case typeStops:
+            filetype = "stops";
+            break;
+        case typeInput:
+            filetype = "input";
+            break;
+        default:
+            break;
+    }
+    
+    cout << "Enter JSON " << filetype << " file name: (no txt needed)" << endl;
+    getline(cin, line);
+    
+    filename += line + ".JSON";
+    
+    filepath = filename;
+    
     cout << "Created JSON_Input object for reading." << endl;
 }
 

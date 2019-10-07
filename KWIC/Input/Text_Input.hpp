@@ -34,7 +34,7 @@ public:
     bool reachedEND() override;  //Check if eof was reached
     
     //MARK: Constructor
-    Text_Input(string filename, LineStorage & data, type entryType);  //Constructor
+    Text_Input(LineStorage & data, type entryType);  //Constructor
     
     //MARK: Destructor
     ~Text_Input() = default; //Destructor

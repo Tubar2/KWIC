@@ -35,7 +35,16 @@ void Text_Output::close(){
 }
 
 //MARK: Construcotr
-Text_Output::Text_Output(string filename, vector<string> & data)
-:Output(filename, data){
+Text_Output::Text_Output(vector<string> & data)
+:Output(data){
+    
+    string filepath {"Exits/"}, line{};
+    cout << "Enter output file name: (no txt needed)" << endl;
+    getline(cin, line);
+    
+    filepath += line + ".txt";
+    
+    outputTitle = filepath;
+    
     cout << "Text_Output object created." << endl;
 }

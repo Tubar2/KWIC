@@ -29,7 +29,7 @@ class DBLP_Input : public Input{
 public:
 
     //MARK: Constructor
-    DBLP_Input(string query, LineStorage & data, type entryType);
+    DBLP_Input(LineStorage & data, type entryType);
 
     //MARK: Setup
     bool setup() override;

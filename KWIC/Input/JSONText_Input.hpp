@@ -26,7 +26,7 @@ public:
     ifstream in_file {};
 
     //MARK: Constructor
-    JSON_Input(string filepath, LineStorage & data, type entryType);
+    JSON_Input(LineStorage & data, type entryType);
 
     //MARK: Setup
     bool setup() override;

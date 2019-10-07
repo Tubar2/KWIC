@@ -38,7 +38,7 @@ vector<string> CircularShifter::makeCircularShifts(){
         data.push_back(tempWord);
         
         tempShift = joinVector(data);
-        cout << "Shift (" << (i+1) << "/" << expectedShifts << "): " << tempShift << endl;
+        /// cout << "Shift (" << (i+1) << "/" << expectedShifts << "): " << tempShift << endl;
         allShifts.push_back(tempShift);
     }
     
