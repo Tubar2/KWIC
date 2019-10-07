@@ -10,10 +10,11 @@
 
 void Output::assemble(){
     std::cout << "Assembling output" << std::endl;
+    setup();
 }
 
-void Output::extractContent(){
-    
+void Output::printContent(){
+    print();
 }
 
 //MARK: Constructor
