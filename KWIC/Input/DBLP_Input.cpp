@@ -85,7 +85,7 @@ bool DBLP_Input::reachedEND() {
 }
 
 void DBLP_Input::finish() {
-    std::cout << "Yay, finished";
+    std::cout << "Closing DBLP_Input resources" << std::endl;
 }
 
 std::size_t DBLP_Input::write_data(void* buf, std::size_t size, std::size_t nmemb, void* userp)

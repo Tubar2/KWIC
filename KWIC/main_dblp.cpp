@@ -1,93 +1,103 @@
-// #include <iostream>
+//
+//  main.cpp
+//  KWIC
+//
+//  Created by Ricardo de Castro Giometti Santos on 30/09/19.
+//  Copyright © 2019 Ricardo de Castro Giometti Santos. All rights reserved.
+//
 
-// #include "DBLP_Input.hpp"
-// #include "Text_Input.hpp"
-// #include "Text_Output.hpp"
-// #include "CircularShifter.hpp"
-// #include "Alphabetizer.hpp"
+#include <iostream>
+#include <string>
+#include <ctype.h>
+#include <vector>
+#include <algorithm>
 
-// bool clearPrevEnv2(string filepath);
+#include "CircularShifter.hpp"
+#include "Alphabetizer.hpp"
+#include "LineStorage.hpp"
+#include "Output/Text_Output.hpp"
+#include "Input/Text_Input.hpp"
+#include "Input/DBLP_Input.hpp"
 
-// int main2()
-// {
-//     string filepath {"Exits/"}, line{};
-//     cout << "Enter output file name: (no txt needed)" << endl;
-//     getline(cin, line);
-//     //line = "saida";
+using namespace std;
 
-//     filepath += line + ".txt";
+void printVector(vector<string> myvector);
+string createFilepath();
+
+int main(int argc, const char * argv[]) {
     
-//     //TODO: Solution for clearPrevEnv
-//     if (!clearPrevEnv2(filepath)){
-//         exit(3);
-//     }
+    string filepath = createFilepath();
     
-//     //Definig both types of enums
-//     type stops = typeStops;
-//     type inputs = typeInput;
-
-//     LineStorage data;
+    //Definig both types of enums
+    type stops = typeStops;
+    type inputs = typeInput;
     
-//     DBLP_Input input{"teste", data, inputs};
-//     Text_Input words("Resources/nltkstops.txt", data, stops);
-
-//     input.setup();
-//     words.setup();
-
-//     //Extracting stop Words
-//     words.extract();
-
-//     //Extracting text
-//     do {
-//         data.deletePrevInfo();
-//         input.extract(); //One line extraction
-        
-//         //Creating CircularShifter object pointer
-//         CircularShifter * cs = new CircularShifter(data.originalLine);
-        
-//         //Creating all shifts for stored line
-//         data.shiftedVariations = cs->makeCircularShifts();
-//         cout << "Shifts made: " << data.storedLines() << endl;
-        
-//         //Creating alphabetizer object pointer
-//         Alphabetizer * alph = new Alphabetizer(data);
-        
-//         //Removing stops and alphabetizing
-//         alph->removeStops();
-//         alph->alphabetiseData();
-        
-//         //Creating output object
-//         Text_Output to(filepath, data.shiftedVariations);
-        
-//         to.createFile();
-//         to.printOutput();
-        
-//         //Closing files
-//         to.closeFile();
-        
-//         //Deleting pointers
-//         delete cs;
-//         delete alph;
-        
-//     } while (!input.reachedEND());
+    //Creating Line Storage
+    LineStorage data;
     
-//     //MARK: Perguntas pro prof
-//         // - Objeto criado em um do while sai do escopo nas seguintes iterações quando criado com outros parâmetros?
+    //Creating and setting up new Input objects
+    DBLP_Input input("test", data, inputs);
+    Text_Input words("Resources/mystops.txt", data, stops);
+    input.open();
+    words.open();
     
-//     //Closing others
-
-//     words.closeFile();
-
-//     return 0;
-// }
-
-// bool clearPrevEnv2(string filepath){
+    //Extracting stop Words then closing reader
+    words.extract();
+    words.close();
     
-//     bool opened {};
-//     ifstream a{};
+    //Creating CircularShifter object pointer
+    CircularShifter * cs = new CircularShifter(data.originalLine_Vector);
     
-//     a.open(filepath, std::ifstream::out | std::ifstream::trunc);
-//     opened = a.is_open();
-//     a.close();
-//     return opened;
-// }
+    //Creating alphabetizer object pointer
+    Alphabetizer * alph = new Alphabetizer(data);
+    
+    //Creating output object
+    Text_Output to(filepath, data.shiftedVariations);
+    
+    to.createFile();
+    
+    //Extracting text 1 line at a time
+    do {
+        data.deletePrevInfo();
+        input.extract();      //One line extraction
+        
+        //Creating all shifts for stored line
+        data.shiftedVariations = cs->makeCircularShifts();
+        cout << "Shifts made: " << data.storedLines() << endl;
+        
+        //Removing stops and alphabetizing
+        alph->removeStops();
+        alph->alphabetiseData();
+        
+        to.printOutput();
+        
+    } while (!input.reachedEND());
+    
+    //Deleting pointers
+    delete cs;
+    delete alph;
+    
+    //Closing
+    to.closeFile();
+    input.close();
+    
+    return 0;
+}
+
+//MARK: printVector
+void printVector(vector<string> myvector){
+    for (auto mystr : myvector) {
+        cout << mystr << endl;
+    }
+}
+
+//MARK: createFileath
+string createFilepath(){
+    string filepath {"Exits/"}, line{};
+    cout << "Enter output file name: (no txt needed)" << endl;
+    getline(cin, line);
+    
+    filepath += line + ".txt";
+    
+    return filepath;
+}
