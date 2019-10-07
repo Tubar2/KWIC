@@ -1,8 +1,8 @@
 KWIC : main.o LineStorage.o CircularShifter.o Alphabetizer.o I_Input.o Input.o Text_Input.o Output.o Text_Output.o DBLP_Input.o JSONText_Input.o Terminal_Output.o
-	g++ -std=c++17 -o KWIC main.o LineStorage.o CircularShifter.o Alphabetizer.o I_Input.o Input.o Text_Input.o Output.o Text_Output.o JSONText_Input.o Terminal_Output.o -g -Wall
+	g++ -std=c++17 -o KWIC main.o LineStorage.o CircularShifter.o Alphabetizer.o I_Input.o Input.o Text_Input.o Output.o DBLP_Input.o Text_Output.o JSONText_Input.o Terminal_Output.o -lcurl -g -Wall
 
 main.o : main.cpp CircularShifter.hpp Alphabetizer.hpp Input/Text_Input.hpp Input/DBLP_Input.hpp Output/Output.hpp Output/Text_Output.hpp Output/Terminal_Output.hpp Input/JSONText_Input.hpp Factory.hpp
-	g++ -std=c++17 -c main.cpp -g -Wall
+	g++ -std=c++17 -c main.cpp -g -Wall -lcurl
 LineStorage.o : LineStorage.cpp LineStorage.hpp
 	g++ -std=c++17 -c LineStorage.cpp -g -Wall
 CircularShifter.o : CircularShifter.cpp CircularShifter.hpp LineStorage.hpp
