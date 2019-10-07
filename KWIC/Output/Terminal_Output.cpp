@@ -7,3 +7,13 @@
 //
 
 #include "Terminal_Output.hpp"
+
+void Terminal_Output::print(){
+    for (auto line : data) {
+        std::cout << line << std::endl;;
+    }
+}
+
+void Terminal_Output::setup(){
+    //Setup need's no previous setup on terminal output
+}
