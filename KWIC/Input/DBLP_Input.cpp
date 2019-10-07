@@ -9,10 +9,10 @@
 #include "DBLP_Input.hpp"
 
 //MARK: Constructor
-DBLP_Input::DBLP_Input(string query, LineStorage & data, type entryType)
+DBLP_Input::DBLP_Input(std::string query, LineStorage & data, type entryType)
 :Input(query, data, entryType)
 {
-    cout << "Created DBLP_Input object for reading." << endl;
+    std::cout << "Created DBLP_Input object for reading." << std::endl;
 }
 
 //MARK: Setup
@@ -50,12 +50,12 @@ bool DBLP_Input::setup(){
 }
 //Extracts line : delimiter '\n'
 void DBLP_Input::extractMain(){  
-    string line;
+    std::string line;
     
     line = all_titles_vector.at(title_iterator);
     data.originalLine_String = line;
     
-    string tempWord {};
+    std::string tempWord {};
     for (auto c : line) {
         if (c == ' ') {
             data.originalLine_Vector.push_back(tempWord);

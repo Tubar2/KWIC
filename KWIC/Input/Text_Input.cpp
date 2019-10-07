@@ -8,11 +8,9 @@
 
 #include "Text_Input.hpp"
 
-using namespace std;
-
 //MARK: setup
 bool Text_Input::setup(){
-    cout << "Setting up Text Input enviroment." << endl;
+    std::cout << "Setting up Text Input enviroment." << std::endl;
     
     in_file.open(filepath);
     
@@ -26,12 +24,12 @@ bool Text_Input::reachedEND(){ //Check if eof was reached
 
 //MARK: Extractors
 void Text_Input::extractMain(){  //Extracts line : delimiter '\n'
-    string line {};
+    std::string line {};
     
     getline(in_file, line);
     data.originalLine_String = line;
     
-    string tempWord {};
+    std::string tempWord {};
     for (auto c : line) {
         if (c == ' ') {
             data.originalLine_Vector.push_back(tempWord);
@@ -45,7 +43,7 @@ void Text_Input::extractMain(){  //Extracts line : delimiter '\n'
 }
 
 void Text_Input::extractStops(){
-    string line {};
+    std::string line {};
 
     while (!reachedEND()) {
         getline(in_file, line);
@@ -60,10 +58,10 @@ void Text_Input::finish(){
 }
 
 //MARK: Constructor
-Text_Input::Text_Input(string filename, LineStorage & data, type entryType)
+Text_Input::Text_Input(std::string filename, LineStorage & data, type entryType)
 :Input(filename, data, entryType)
 {
-    cout << "Created Text_Input object for reading." << endl;
+    std::cout << "Created Text_Input object for reading." << std::endl;
     
 }
 

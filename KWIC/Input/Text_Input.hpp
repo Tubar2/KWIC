@@ -16,7 +16,7 @@
 class Text_Input: public Input{
     
 private:
-    ifstream in_file {};
+    std::ifstream in_file {};
     
     //MARK: Extractors
     void extractStops() override; //Extracts each word in a vector<string>
@@ -34,7 +34,7 @@ public:
     bool reachedEND() override;  //Check if eof was reached
     
     //MARK: Constructor
-    Text_Input(string filename, LineStorage & data, type entryType);  //Constructor
+    Text_Input(std::string filename, LineStorage & data, type entryType);  //Constructor
     
     //MARK: Destructor
     ~Text_Input() = default; //Destructor

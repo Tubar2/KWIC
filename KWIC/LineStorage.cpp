@@ -29,7 +29,7 @@ int LineStorage::storedStops(){
 // MARK: charsInWord
 int LineStorage::charsInWord(int position){
     int curPosition {0}, numChars {0};
-    string requestedWord {};
+    std::string requestedWord {};
     
     for (auto word : originalLine_Vector) {
         if (curPosition == position) {
@@ -45,9 +45,9 @@ int LineStorage::charsInWord(int position){
 }
 
 // MARK: getWord
-string LineStorage::getWord(int position){
+std::string LineStorage::getWord(int position){
     int curPosition {0};
-    string requestedWord {};
+    std::string requestedWord {};
     
     for (auto word : originalLine_Vector) {
         if (curPosition == position) {
@@ -85,8 +85,8 @@ char LineStorage::getChar(int wordPosition, int charPosition){
 }
 
 //MARK: getWordFromString
-string LineStorage::getWordFromString(int position, string line){
-    string word {};
+std::string LineStorage::getWordFromString(int position, std::string line){
+    std::string word {};
     int tempPos {};
     
     for (auto c : line) {
@@ -115,5 +115,5 @@ void LineStorage::deletePrevInfo(){
 
 //MARK: Constructor
 LineStorage::LineStorage(){
-    cout << "Line Storage object created." << endl;
+    std::cout << "Line Storage object created." << std::endl;
 }

@@ -11,11 +11,9 @@
 
 #include "Output.hpp"
 
-using namespace std;
-
 class Text_Output: Output {
     
-    ofstream out_file {};
+    std::ofstream out_file {};
     
 public:
     
@@ -25,7 +23,7 @@ public:
     void closeFile();
     
     //MARK: Constructor
-    Text_Output(string filename, vector<string> & data);
+    Text_Output(std::string filename, std::vector<std::string> & data);
     
 };
 

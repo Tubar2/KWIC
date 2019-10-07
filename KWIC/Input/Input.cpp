@@ -30,12 +30,12 @@ void Input::open(){
 void Input::extract(){
     switch (entryType) {
         case typeStops:
-            cout << "Extracting stop words" << endl;
+            std::cout << "Extracting stop words" << std::endl;
             extractStops();
-            cout << "Extracted " << data.storedStops() << " words" << endl;
+            std::cout << "Extracted " << data.storedStops() << " words" << std::endl;
             break;
         case typeInput:
-            cout << "Extracting line from main program" << endl;
+            std::cout << "Extracting line from main program" << std::endl;
             extractMain();
         break;
             

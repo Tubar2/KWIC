@@ -32,17 +32,15 @@
 #include <string>
 #include <vector>
 
-using namespace std;
-
 class LineStorage {
     
 public:
     
     // MARK: Variables
-    string originalLine_String {};
-    vector<string> originalLine_Vector {};         // Vector of strings of words
-    vector<string> shiftedVariations {};    // All shifted variations of line
-    vector<string> stopWords {};            // All stop words
+    std::string originalLine_String {};
+    std::vector<std::string> originalLine_Vector {};         // Vector of strings of words
+    std::vector<std::string> shiftedVariations {};    // All shifted variations of line
+    std::vector<std::string> stopWords {};            // All stop words
     
     //MARK: wordsInLine
     int wordsInLine();                      // Returns number of words in line
@@ -55,13 +53,13 @@ public:
     int charsInWord(int position);          // Returns specified char
 
     //MARK: getWord
-    string getWord(int position);           // Returns specified word
+    std::string getWord(int position);           // Returns specified word
     
     //MARK: getChar
     char getChar(int wordPosition, int charPosition); // Returns specified character from specified word
     
     //MARK: getWordFromString
-    string getWordFromString(int position, string line);
+    std::string getWordFromString(int position, std::string line);
     
     //TODO: Implement setWord
     //MARK: setWord
