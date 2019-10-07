@@ -9,7 +9,7 @@
 #ifndef I_Input_hpp
 #define I_Input_hpp
 
-#include "LineStorage.hpp"
+#include "../LineStorage.hpp"
 #include <iostream>
 #include <fstream>
 #include <sstream>

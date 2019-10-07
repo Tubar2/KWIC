@@ -14,8 +14,8 @@
 
 #include "CircularShifter.hpp"
 #include "Alphabetizer.hpp"
-#include "Text_Output.hpp"
-#include "Text_Input.hpp"
+#include "Output/Text_Output.hpp"
+#include "Input/Text_Input.hpp"
 
 using namespace std;
 
