@@ -33,11 +33,16 @@ public:
     //MARK: Setup
     bool setup() override;
 
+    void extractStops() override; //Extracts all stop words in a vector<string>
+
     //Extracts line : delimiter '\n'
-    void extract() override;
+    void extractMain() override; // search for query in DBLP api and stores all titles in a vector of strings
 
     // return true when all titles in all_titles_vector have been accessed
     bool reachedEND() override;
+
+    //MARK: finish
+    void finish() override;//Closes file
 
     //MARK: Destructor
     virtual ~DBLP_Input() = default;
@@ -61,9 +66,6 @@ private:
 
     // download the URL into a `std::string`.
     std::string get_url(std::string const& url);
-
-    // search for query in DBLP api and stores all titles in a vector of strings
-    void search_and_store();
 };
 
 #endif

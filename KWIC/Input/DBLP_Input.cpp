@@ -17,14 +17,39 @@ DBLP_Input::DBLP_Input(string query, LineStorage & data, type entryType)
 
 //MARK: Setup
 bool DBLP_Input::setup(){
+    // query is the desired search paramter
+    std::string query = Input::filepath;
+
+    // bufilepathrl
+    std::string url;
+    url.append("https://dblp.org/search/publ/api?q=");
+    url.append(query);
+    url.append("&format=json&h=10");
+    std::cout << url << std::endl;
     
-    cout << "Setting up DBLP Input enviroment." << endl;
-    search_and_store();
+    // store json file from url into variable j
+    json j = json::parse(get_url(url));
+    
+    // reaching the part where the articles are stored
+    json o = j["result"]["hits"]["hit"];
+
+    std::string str;
+
+    // iterating through articles and colecting titles
+    for (auto it = o.begin(); it != o.end(); ++it)
+    {
+        str = (*it)["info"]["title"];
+        all_titles_vector.insert(all_titles_vector.end(),str);
+
+    }
+    title_count = static_cast<int>(all_titles_vector.size());
+    title_iterator = 0;
+    
 
     return true;
 }
 //Extracts line : delimiter '\n'
-void DBLP_Input::extract(){  
+void DBLP_Input::extractMain(){  
     string line;
     
     line = all_titles_vector.at(title_iterator);
@@ -45,6 +70,12 @@ void DBLP_Input::extract(){
     title_iterator++;
 }
 
+// TODO
+void DBLP_Input::extractStops(){
+    std::cout << "can't extract stop words from dblp site" << std::endl;
+    exit(15);
+}
+
 bool DBLP_Input::reachedEND() {
     if (title_iterator == title_count)
     {
@@ -53,6 +84,9 @@ bool DBLP_Input::reachedEND() {
     return false;
 }
 
+void DBLP_Input::finish() {
+    std::cout << "Yay, finished";
+}
 
 std::size_t DBLP_Input::write_data(void* buf, std::size_t size, std::size_t nmemb, void* userp)
 {
@@ -83,36 +117,4 @@ std::string DBLP_Input::get_url(std::string const& url)
 
     }
     return data;
-}
-
-void DBLP_Input::search_and_store(){
-
-    // query is the desired search paramter
-    std::string query = Input::filepath;
-
-    // bufilepathrl
-    std::string url;
-    url.append("https://dblp.org/search/publ/api?q=");
-    url.append(query);
-    url.append("&format=json&h=10");
-    std::cout << url << std::endl;
-    
-    // store json file from url into variable j
-    json j = json::parse(get_url(url));
-    
-    // reaching the part where the articles are stored
-    json o = j["result"]["hits"]["hit"];
-
-    std::string str;
-
-    // iterating through articles and colecting titles
-    for (auto it = o.begin(); it != o.end(); ++it)
-    {
-        str = (*it)["info"]["title"];
-        all_titles_vector.insert(all_titles_vector.end(),str);
-
-    }
-    title_count = static_cast<int>(all_titles_vector.size());
-    title_iterator = 0;
-
 }
