@@ -18,6 +18,7 @@
 #include "Output/Text_Output.hpp"
 #include "Input/Text_Input.hpp"
 #include "Input/DBLP_Input.hpp"
+#include "Input/JSONText_Input.hpp"
 
 using namespace std;
 
@@ -37,7 +38,7 @@ int main(int argc, const char * argv[]) {
     
     //Creating and setting up new Input objects
     DBLP_Input input("test", data, inputs);
-    Text_Input words("Resources/mystops.txt", data, stops);
+    JSON_Input words("Resources/stops.json", data, stops);
     input.open();
     words.open();
     
