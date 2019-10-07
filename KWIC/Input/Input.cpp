@@ -10,7 +10,7 @@
 
 //MARK: Constructor
 Input::Input(std::string filepath, LineStorage & data, type entryType)
-:filepath(filepath), data(data), entryType(entryType){
+: entryType(entryType), filepath(filepath), data(data) {
 }
 
 //MARK: Setup
