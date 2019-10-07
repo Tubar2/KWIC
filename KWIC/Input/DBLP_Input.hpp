@@ -18,6 +18,8 @@
 #include "Input.hpp"
 #include "../LineStorage.hpp"
 
+#include <string>
+#include <vector>
 #include <iostream>
 #include <memory>
 #include <curl/curl.h>
