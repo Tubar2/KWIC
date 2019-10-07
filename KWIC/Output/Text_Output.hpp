@@ -11,16 +11,17 @@
 
 #include "Output.hpp"
 
-class Text_Output: Output {
+class Text_Output: public Output {
     
+protected:
     std::ofstream out_file {};
     
+private:
+    void setup() override;
+    void print() override;
+    void close() override;
+    
 public:
-    
-    void createFile();
-    void printOutput();
-    
-    void closeFile();
     
     //MARK: Constructor
     Text_Output(std::string filename, std::vector<std::string> & data);

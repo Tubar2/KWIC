@@ -20,8 +20,14 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include "I_Output.hpp"
 
-class Output {
+class Output : public I_Output {
+    
+private:
+    virtual void setup() = 0;
+    virtual void print() = 0;
+    virtual void close() = 0;
     
 protected:
     std::vector<std::string> & data;
@@ -29,6 +35,11 @@ protected:
     
 public:
     
+    void assemble() override;
+    void printContent() override;
+    void terminate() override;
+    
+    //MARK: Constructor
     Output(std::string outputName, std::vector<std::string> & data);
 };
 

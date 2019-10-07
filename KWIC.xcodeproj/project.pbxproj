@@ -117,10 +117,10 @@
 			children = (
 				D7D3348A234644A2006FF606 /* Text_Output.cpp */,
 				D7D33482234644A2006FF606 /* Text_Output.hpp */,
-				D7D33489234644A2006FF606 /* Output.cpp */,
-				D7D3348C234644A2006FF606 /* Output.hpp */,
 				D70ACB98234BCB1500C25FB8 /* Terminal_Output.cpp */,
 				D70ACB99234BCB1500C25FB8 /* Terminal_Output.hpp */,
+				D7D33489234644A2006FF606 /* Output.cpp */,
+				D7D3348C234644A2006FF606 /* Output.hpp */,
 				D70ACB9B234BCD8500C25FB8 /* I_Output.cpp */,
 				D70ACB9C234BCD8500C25FB8 /* I_Output.hpp */,
 			);

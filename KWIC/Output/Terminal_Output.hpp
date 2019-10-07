@@ -9,6 +9,22 @@
 #ifndef Terminal_Output_hpp
 #define Terminal_Output_hpp
 
-#include <stdio.h>
+#include "Output.hpp"
+#include <iostream>
+
+class Terminal_Output : public Output{
+    
+private:
+    
+    void setup() override;
+    void print() override;
+    void close() override;
+    
+public:
+    
+    //MARK: Constructor
+    Terminal_Output(vector<string> &data);
+    
+};
 
 #endif /* Terminal_Output_hpp */

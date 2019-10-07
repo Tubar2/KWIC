@@ -9,7 +9,7 @@
 #include "Text_Output.hpp"
 
 //MARK: createFile
-void Text_Output::createFile(){
+void Text_Output::setup(){
     
     out_file.open(outputTitle, std::ios_base::trunc);
     
@@ -21,7 +21,7 @@ void Text_Output::createFile(){
     }
 }
 
-void Text_Output::printOutput(){
+void Text_Output::print(){
     
     for (auto line : data) {
         out_file << line << std::endl;;
@@ -30,7 +30,7 @@ void Text_Output::printOutput(){
 }
 
 //MARK: closeFile
-void Text_Output::closeFile(){
+void Text_Output::close(){
     out_file.close();
 }
 

@@ -8,6 +8,20 @@
 
 #include "Output.hpp"
 
+void Output::assemble(){
+    std::cout << "Assembling output" << std::endl;
+    setup();
+}
+
+void Output::printContent(){
+    print();
+}
+
+void Output::terminate(){
+    close();
+}
+
+//MARK: Constructor
 Output::Output(std::string outputName, std::vector<std::string> & data)
 :data(data), outputTitle(outputName){
     std::cout << "Output object created." << std::endl;
