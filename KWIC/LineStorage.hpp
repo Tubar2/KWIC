@@ -39,8 +39,8 @@ class LineStorage {
 public:
     
     // MARK: Variables
-    string wholeOriginalLine {};
-    vector<string> originalLine {};         // Vector of strings of words
+    string originalLine_String {};
+    vector<string> originalLine_Vector {};         // Vector of strings of words
     vector<string> shiftedVariations {};    // All shifted variations of line
     vector<string> stopWords {};            // All stop words
     

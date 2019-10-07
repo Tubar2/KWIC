@@ -44,7 +44,7 @@ int main(int argc, const char * argv[]) {
     words.close();
     
     //Creating CircularShifter object pointer
-    CircularShifter * cs = new CircularShifter(data.originalLine);
+    CircularShifter * cs = new CircularShifter(data.originalLine_Vector);
     
     //Creating alphabetizer object pointer
     Alphabetizer * alph = new Alphabetizer(data);
