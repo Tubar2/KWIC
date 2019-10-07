@@ -58,9 +58,30 @@ void Text_Input::finish(){
 }
 
 //MARK: Constructor
-Text_Input::Text_Input(std::string filename, LineStorage & data, type entryType)
-:Input(filename, data, entryType)
+Text_Input::Text_Input(LineStorage & data, type entryType)
+:Input(data, entryType)
 {
+    std::string filetype {}, line {};
+    std::string folder = "Resources/";
+    
+    switch (entryType) {
+        case typeStops:
+            filetype = "stops";
+            break;
+        case typeInput:
+            filetype = "input";
+            break;
+        default:
+            break;
+    }
+    std::cout << "Enter " << filetype << " file name inside Resources folder:" << std::endl;
+    getline(std::cin, line);
+    
+    folder += line;
+    folder += ".txt";
+    
+    filepath = folder;
+    
     std::cout << "Created Text_Input object for reading." << std::endl;
     
 }

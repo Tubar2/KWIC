@@ -26,3 +26,8 @@ Output::Output(std::string outputName, std::vector<std::string> & data)
 :data(data), outputTitle(outputName){
     std::cout << "Output object created." << std::endl;
 }
+
+Output::Output(std::vector<std::string> & data) //1 Arg Constructor
+:data(data){
+    std::cout << "Output object created." << std::endl;
+}

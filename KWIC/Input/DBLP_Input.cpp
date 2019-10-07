@@ -9,9 +9,16 @@
 #include "DBLP_Input.hpp"
 
 //MARK: Constructor
-DBLP_Input::DBLP_Input(std::string query, LineStorage & data, type entryType)
-:Input(query, data, entryType)
+DBLP_Input::DBLP_Input(LineStorage & data, type entryType)
+:Input(data, entryType)
 {
+    std::string line{};
+    
+    std::cout << "Enter research name: " << std::endl;
+    
+    getline(std::cin, line);
+    
+    filepath = line;
     std::cout << "Created DBLP_Input object for reading." << std::endl;
 }
 

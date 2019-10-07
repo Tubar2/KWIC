@@ -40,7 +40,9 @@ public:
     void terminate() override;
     
     //MARK: Constructor
-    Output(std::string outputName, std::vector<std::string> & data);
+    Output(std::string outputName, std::vector<std::string> & data); //2 Args Contructor
+    Output(std::vector<std::string> & data); //1 Arg Constructor
+    
 };
 
 #endif /* Output_hpp */

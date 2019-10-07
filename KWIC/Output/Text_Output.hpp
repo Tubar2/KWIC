@@ -24,7 +24,7 @@ private:
 public:
     
     //MARK: Constructor
-    Text_Output(std::string filename, std::vector<std::string> & data);
+    Text_Output(std::vector<std::string> & data);
     
 };
 

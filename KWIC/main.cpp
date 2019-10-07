@@ -17,12 +17,12 @@
 #include "Output/Text_Output.hpp"
 #include "Input/Text_Input.hpp"
 #include "Output/Terminal_Output.hpp"
+#include "Input/DBLP_Input.hpp"
+#include "Input/JSONText_Input.hpp"
 
-std::string createFilepath();
+using namespace std;
 
 int main(int argc, const char * argv[]) {
-    
-    std::string filepath = createFilepath();
     
     //Definig both types of enums
     type stops = typeStops;
@@ -32,25 +32,18 @@ int main(int argc, const char * argv[]) {
     LineStorage data;
     
     //Creating new Input objects
-    Text_Input input("Resources/myfile.txt", data, inputs);
-    Text_Input words("Resources/mystops.txt", data, stops);
+    DBLP_Input input(data, inputs);
+    JSON_Input words(data, stops);
     
     //Creating output object
-    Terminal_Output to(data.shiftedVariations);
+    Text_Output to(data.shiftedVariations);
     
+    //Assembles Factory with corresponding types
     Factory factory{input, words, to, data};
+    
+    //Runs factory
     factory.run();
     
     return 0;
 }
 
-//MARK: createFilepath
-std::string createFilepath(){
-    std::string filepath {"Exits/"}, line{};
-    std::cout << "Enter output file name: (no txt needed)" << std::endl;
-    getline(std::cin, line);
-    
-    filepath += line + ".txt";
-    
-    return filepath;
-}
