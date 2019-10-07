@@ -1,5 +1,5 @@
 //
-//  DBLP_Input.cpp
+//  DBLP_Input.hpp
 //  KWIC
 //
 //  Created by Gianlucas dos Santos on 06/10/19.
@@ -12,6 +12,7 @@
 
 //This class uses cURL library to access DBLP api and search for a query returning a json string.
 //The string is used with the json library to extract all titles and store them in a vector of strings.
+//This module can't be used to read stopwords
 
 #include "I_Input.hpp"
 #include "Input.hpp"
