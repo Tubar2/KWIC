@@ -1,8 +1,8 @@
 KWIC : main.o LineStorage.o CircularShifter.o Alphabetizer.o I_Input.o Input.o Text_Input.o Output.o Text_Output.o
 	g++ -std=c++14 -o KWIC main.o LineStorage.o CircularShifter.o Alphabetizer.o I_Input.o Input.o Text_Input.o Output.o Text_Output.o -g -Wall
 
-Main_dblp : main_dblp.o LineStorage.o CircularShifter.o Alphabetizer.o I_Input.o Input.o Text_Input.o Output.o Text_Output.o DBLP_Input.o
-	g++ -std=c++14 -o Main_dblp main_dblp.o LineStorage.o CircularShifter.o Alphabetizer.o I_Input.o Input.o Text_Input.o Output.o Text_Output.o DBLP_Input.o -lcurl -I single_include/ -g -Wall
+Main_dblp : main_dblp.o LineStorage.o CircularShifter.o Alphabetizer.o I_Input.o Input.o Text_Input.o Output.o Text_Output.o DBLP_Input.o JSONText_Input.o
+	g++ -std=c++14 -o Main_dblp main_dblp.o LineStorage.o CircularShifter.o Alphabetizer.o I_Input.o Input.o Text_Input.o Output.o Text_Output.o DBLP_Input.o JSONText_Input.o -lcurl -I single_include/ -g -Wall
 
 
 main.o : main.cpp CircularShifter.hpp Alphabetizer.hpp Input/Text_Input.hpp Output/Output.hpp Output/Text_Output.hpp
@@ -25,6 +25,8 @@ Text_Output.o : Output/Text_Output.cpp Output/Text_Output.cpp Output/Output.hpp
 	g++ -std=c++14 -c Output/Text_Output.cpp -g -Wall
 DBLP_Input.o : Input/DBLP_Input.cpp Input/DBLP_Input.hpp Input/I_Input.hpp LineStorage.hpp Input/Input.hpp
 	g++ -std=c++14 -c Input/DBLP_Input.cpp -g -Wall -lcurl -I single_include/
+JSONText_Input.o : Input/JSONText_Input.cpp Input/JSONText_Input.hpp Input/I_Input.hpp LineStorage.hpp Input/Input.hpp
+	g++ -std=c++14 -c Input/JSONText_Input.cpp -g -Wall -lcurl -I single_include/
 main_dblp.o : main_dblp.cpp Input/DBLP_Input.hpp CircularShifter.hpp Alphabetizer.hpp Input/Text_Input.hpp Output/Output.hpp Output/Text_Output.hpp
 	g++ -std=c++14 -c main_dblp.cpp -g -Wall -lcurl -I single_include/
 
