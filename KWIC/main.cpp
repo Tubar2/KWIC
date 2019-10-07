@@ -14,6 +14,7 @@
 
 #include "CircularShifter.hpp"
 #include "Alphabetizer.hpp"
+#include "LineStorage.hpp"
 #include "Output/Text_Output.hpp"
 #include "Input/Text_Input.hpp"
 
