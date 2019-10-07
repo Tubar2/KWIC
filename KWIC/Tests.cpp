@@ -16,41 +16,39 @@
 #include "Text_Output.hpp"
 #include "Text_Input.hpp"
 
-using namespace std;
-
-void printVector2(vector<string> myvector);
+void printVector2(std::vector<std::string> myvector);
 void testMultipleParamGetLine();
-string testJoinVector(vector<string> myVector);
-vector<string> testMakeCircularShifts(vector<string> data);
-void removeStops(vector<string> & shiftedVariations, vector<string> stopWords);
-string testGetWordFromString(int position, string line);
-void testAlphabetizeData(vector<string> & shiftedVariations);
+std::string testJoinVector(std::vector<std::string> myVector);
+std::vector<std::string> testMakeCircularShifts(std::vector<std::string> data);
+void removeStops(std::vector<std::string> & shiftedVariations, std::vector<std::string> stopWords);
+std::string testGetWordFromString(int position, std::string line);
+void testAlphabetizeData(std::vector<std::string> & shiftedVariations);
 void testWithMadeVectors();
-bool testCompareString(string a, string b);
+bool testCompareString(std::string a, std::string b);
 
 //Testing functions
 
-void printVector2(vector<string> myvector){
+void printVector2(std::vector<std::string> myvector){
     for (auto mystr : myvector) {
-        cout << mystr << endl;
+        std::cout << mystr << std::endl;
     }
 }
 
 //MARK: getline with multiple param
 void testMultipleParamGetLine(){
-    string str {};
-    cout << "Type something:" << endl;
-    getline(cin, str);
+    std::string str {};
+    std::cout << "Type something:" << std::endl;
+    getline(std::cin, str);
     
-    std::cout << str <<endl;
+    std::cout << str <<std::endl;
     
-    cout << "Type another thing:" << endl;
-    getline(cin, str, '.');
-    std::cout << str <<endl;
+    std::cout << "Type another thing:" << std::endl;
+    getline(std::cin, str, '.');
+    std::cout << str <<std::endl;
 }
 
 void testWithMadeVectors(){
-    vector<string> testVector {}, shiftsVector {}, stopsVector {};
+    std::vector<std::string> testVector {}, shiftsVector {}, stopsVector {};
         testVector.push_back("Oi,");
         testVector.push_back("meu");
         testVector.push_back("nome");
@@ -71,8 +69,8 @@ void testWithMadeVectors(){
 }
 
 //MARK: Vector -> String
-string testJoinVector(vector<string> myVector){
-    string line {};
+std::string testJoinVector(std::vector<std::string> myVector){
+    std::string line {};
     
     for (auto it = myVector.begin(); it != myVector.end(); ++it) {
         if(std::next(it) == myVector.end()) // last element
@@ -89,9 +87,9 @@ string testJoinVector(vector<string> myVector){
 }
 
 //MARK: All circular shifts
-vector<string> testMakeCircularShifts( vector<string> data){
-    string tempShift {}, tempWord {};
-    vector<string> allShifts {};
+std::vector<std::string> testMakeCircularShifts( std::vector<std::string> data){
+    std::string tempShift {}, tempWord {};
+    std::vector<std::string> allShifts {};
     int expectedShifts = static_cast<int>(data.size());
     
     
@@ -108,8 +106,8 @@ vector<string> testMakeCircularShifts( vector<string> data){
 }
 
 //MARK: wordFromString
-string testGetWordFromString(int position, string line){
-    string word {};
+std::string testGetWordFromString(int position, std::string line){
+    std::string word {};
     int tempPos {};
     
     for (auto c : line) {
@@ -129,9 +127,9 @@ string testGetWordFromString(int position, string line){
 }
 
 //MARK: Remove Stops
-void removeStops(vector<string> & shiftedVariations, vector<string> stopWords){
+void removeStops(std::vector<std::string> & shiftedVariations, std::vector<std::string> stopWords){
     
-    string firstWord {};
+    std::string firstWord {};
     bool change = false;
     auto dataIT = shiftedVariations.begin();
     auto stopsIT = stopWords.begin();
@@ -157,7 +155,7 @@ void removeStops(vector<string> & shiftedVariations, vector<string> stopWords){
 
 //TODO: Diminuir função
 //MARK: compareString
-bool testCompareString(string a, string b){
+bool testCompareString(std::string a, std::string b){
     bool bigger {};
     int i{0};
     
@@ -177,6 +175,6 @@ bool testCompareString(string a, string b){
 }
 
 //MARK: Sorting
-void testAlphabetizeData(vector<string> & shiftedVariations){
+void testAlphabetizeData(std::vector<std::string> & shiftedVariations){
     sort(shiftedVariations.begin(), shiftedVariations.end(), testCompareString);
 }

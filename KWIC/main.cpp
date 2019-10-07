@@ -17,13 +17,11 @@
 #include "Output/Text_Output.hpp"
 #include "Input/Text_Input.hpp"
 
-using namespace std;
-
-string createFilepath();
+std::string createFilepath();
 
 int main(int argc, const char * argv[]) {
     
-    string filepath = createFilepath();
+    std::string filepath = createFilepath();
     
     //Definig both types of enums
     type stops = typeStops;
@@ -46,10 +44,10 @@ int main(int argc, const char * argv[]) {
 }
 
 //MARK: createFilepath
-string createFilepath(){
-    string filepath {"Exits/"}, line{};
-    cout << "Enter output file name: (no txt needed)" << endl;
-    getline(cin, line);
+std::string createFilepath(){
+    std::string filepath {"Exits/"}, line{};
+    std::cout << "Enter output file name: (no txt needed)" << std::endl;
+    getline(std::cin, line);
     
     filepath += line + ".txt";
     

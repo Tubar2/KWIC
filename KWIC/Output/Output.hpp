@@ -21,17 +21,15 @@
 #include <string>
 #include <vector>
 
-using namespace std;
-
 class Output {
     
 protected:
-    vector<string> & data;
-    string outputTitle;
+    std::vector<std::string> & data;
+    std::string outputTitle;
     
 public:
     
-    Output(string outputName, vector<string> & data);
+    Output(std::string outputName, std::vector<std::string> & data);
 };
 
 #endif /* Output_hpp */

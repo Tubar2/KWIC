@@ -8,7 +8,7 @@
 
 #include "Alphabetizer.hpp"
 
-bool compareString(string a, string b){
+bool compareString(std::string a, std::string b){
     bool bigger {};
     int i{0};
     
@@ -30,12 +30,12 @@ bool compareString(string a, string b){
 Alphabetizer::Alphabetizer(LineStorage & newdata)
 :data(newdata)
 {
-    cout << "Alphabetizer created" << endl;
+    std::cout << "Alphabetizer created" << std::endl;
 }
 
 void Alphabetizer::removeStops(){
     
-    string firstWord {};
+    std::string firstWord {};
     bool change = false;
     auto dataIT = data.shiftedVariations.begin();
     auto stopsIT = data.stopWords.begin();
