@@ -20,7 +20,6 @@
 #include "Input/DBLP_Input.hpp"
 #include "Input/JSONText_Input.hpp"
 
-using namespace std;
 
 int main(int argc, const char * argv[]) {
     
