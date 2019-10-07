@@ -18,6 +18,8 @@
 #include "Input.hpp"
 #include "../LineStorage.hpp"
 
+#include <string>
+#include <vector>
 #include <iostream>
 #include <memory>
 #include <curl/curl.h>
@@ -34,7 +36,7 @@ public:
     //MARK: Setup
     bool setup() override;
 
-    void extractStops() override; //Extracts all stop words in a vector<string>
+    void extractStops() override; //Extracts all stop words in a std::vector<std::string>
 
     //Extracts line : delimiter '\n'
     void extractMain() override; // search for query in DBLP api and stores all titles in a vector of strings

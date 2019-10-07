@@ -16,10 +16,10 @@ DBLP_Input::DBLP_Input(LineStorage & data, type entryType)
     
     std::cout << "Enter research name: " << std::endl;
     
-    getline(cin, line);
+    getline(std::cin, line);
     
     filepath = line;
-    cout << "Created DBLP_Input object for reading." << endl;
+    std::cout << "Created DBLP_Input object for reading." << std::endl;
 }
 
 //MARK: Setup
@@ -57,12 +57,12 @@ bool DBLP_Input::setup(){
 }
 //Extracts line : delimiter '\n'
 void DBLP_Input::extractMain(){  
-    string line;
+    std::string line;
     
     line = all_titles_vector.at(title_iterator);
     data.originalLine_String = line;
     
-    string tempWord {};
+    std::string tempWord {};
     for (auto c : line) {
         if (c == ' ') {
             data.originalLine_Vector.push_back(tempWord);

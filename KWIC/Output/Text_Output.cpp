@@ -11,20 +11,20 @@
 //MARK: createFile
 void Text_Output::setup(){
     
-    out_file.open(outputTitle, ios_base::trunc);
+    out_file.open(outputTitle, std::ios_base::trunc);
     
     if (!out_file.is_open()) {
-        cout << "Error creating output file." << endl;
+        std::cout << "Error creating output file." << std::endl;
         exit(2);
     } else {
-        cout << "Output file created succesfully." << endl;
+        std::cout << "Output file created succesfully." << std::endl;
     }
 }
 
 void Text_Output::print(){
     
     for (auto line : data) {
-        out_file << line << endl;;
+        out_file << line << std::endl;;
     }
     
 }
@@ -35,16 +35,16 @@ void Text_Output::close(){
 }
 
 //MARK: Construcotr
-Text_Output::Text_Output(vector<string> & data)
+Text_Output::Text_Output(std::vector<std::string> & data)
 :Output(data){
     
-    string filepath {"Exits/"}, line{};
-    cout << "Enter output file name: (no txt needed)" << endl;
-    getline(cin, line);
+    std::string filepath {"Exits/"}, line{};
+    std::cout << "Enter output file name: (no txt needed)" << std::endl;
+    getline(std::cin, line);
     
     filepath += line + ".txt";
     
     outputTitle = filepath;
     
-    cout << "Text_Output object created." << endl;
+    std::cout << "Text_Output object created." << std::endl;
 }

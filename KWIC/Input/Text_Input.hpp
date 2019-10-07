@@ -16,7 +16,7 @@
 class Text_Input: public Input{
     
 private:
-    ifstream in_file {};
+    std::ifstream in_file {};
     
     //MARK: Extractors
     void extractStops() override; //Extracts each word in a vector<string>

@@ -8,7 +8,7 @@
 
 #include "Terminal_Output.hpp"
 
-Terminal_Output::Terminal_Output(vector<string> &data)
+Terminal_Output::Terminal_Output(std::vector<std::string> &data)
 :Output("", data){
     
 }

@@ -23,7 +23,7 @@ private:
 public:
     
     //MARK: Constructor
-    Terminal_Output(vector<string> &data);
+    Terminal_Output(std::vector<std::string> &data);
     
 };
 

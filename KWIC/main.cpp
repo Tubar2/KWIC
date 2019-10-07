@@ -17,8 +17,8 @@
 #include "Output/Text_Output.hpp"
 #include "Input/Text_Input.hpp"
 #include "Output/Terminal_Output.hpp"
-#include "DBLP_Input.hpp"
-#include "JSONText_Input.hpp"
+#include "Input/DBLP_Input.hpp"
+#include "Input/JSONText_Input.hpp"
 
 using namespace std;
 

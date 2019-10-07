@@ -36,7 +36,7 @@ public:
     void close() override;  //Closes opend url, file, etc...
     
     //MARK: Constructor and Destructor
-    Input(string filepath, LineStorage & data, type entryType); //3 Args Constructors
+    Input(std::string filepath, LineStorage & data, type entryType); //3 Args Constructors
     Input(LineStorage & data, type entryType); //2 Args Constructor
     ~Input() = default;
 };

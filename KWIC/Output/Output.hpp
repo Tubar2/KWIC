@@ -22,8 +22,6 @@
 #include <vector>
 #include "I_Output.hpp"
 
-using namespace std;
-
 class Output : public I_Output {
     
 private:
@@ -32,8 +30,8 @@ private:
     virtual void close() = 0;
     
 protected:
-    vector<string> & data;
-    string outputTitle;
+    std::vector<std::string> & data;
+    std::string outputTitle;
     
 public:
     
@@ -42,8 +40,8 @@ public:
     void terminate() override;
     
     //MARK: Constructor
-    Output(string outputName, vector<string> & data); //2 Args Contructor
-    Output(vector<string> & data); //1 Arg Constructor
+    Output(std::string outputName, std::vector<std::string> & data); //2 Args Contructor
+    Output(std::vector<std::string> & data); //1 Arg Constructor
     
 };
 

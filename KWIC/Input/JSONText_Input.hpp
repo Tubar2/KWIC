@@ -23,7 +23,7 @@ using json = nlohmann::json;
 
 class JSON_Input : public Input{
 public:
-    ifstream in_file {};
+    std::ifstream in_file {};
 
     //MARK: Constructor
     JSON_Input(LineStorage & data, type entryType);

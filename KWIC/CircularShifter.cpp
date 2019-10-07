@@ -7,11 +7,10 @@
 //
 
 #include "CircularShifter.hpp"
-using namespace std;
 
 // Auxiliar Function
-string joinVector(vector<string> myVector){
-    string line {};
+std::string joinVector(std::vector<std::string> myVector){
+    std::string line {};
     
     for (auto it = myVector.begin(); it != myVector.end(); ++it) {
         if(std::next(it) == myVector.end()) // last element
@@ -27,9 +26,9 @@ string joinVector(vector<string> myVector){
     return line;
 }
 
-vector<string> CircularShifter::makeCircularShifts(){
-    string tempShift {}, tempWord {};
-    vector<string> allShifts {};
+std::vector<std::string> CircularShifter::makeCircularShifts(){
+    std::string tempShift {}, tempWord {};
+    std::vector<std::string> allShifts {};
     int expectedShifts = static_cast<int>(data.size());
     
     for (int i = 0; i < expectedShifts; i++) {
@@ -38,7 +37,7 @@ vector<string> CircularShifter::makeCircularShifts(){
         data.push_back(tempWord);
         
         tempShift = joinVector(data);
-        /// cout << "Shift (" << (i+1) << "/" << expectedShifts << "): " << tempShift << endl;
+        std::cout << "Shift (" << (i+1) << "/" << expectedShifts << "): " << tempShift << std::endl;
         allShifts.push_back(tempShift);
     }
     
@@ -46,9 +45,9 @@ vector<string> CircularShifter::makeCircularShifts(){
 }
 
 //MARK: Constructor
-CircularShifter::CircularShifter(vector<string> & originalLineVector)
+CircularShifter::CircularShifter(std::vector<std::string> & originalLineVector)
 :data(originalLineVector)
 {
-    cout << "Circular Shifter object created with " << originalLineVector.size() << " words." << endl;
+    std::cout << "Circular Shifter object created with " << originalLineVector.size() << " words." << std::endl;
     
 }

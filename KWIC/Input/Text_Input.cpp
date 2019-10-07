@@ -8,11 +8,9 @@
 
 #include "Text_Input.hpp"
 
-using namespace std;
-
 //MARK: setup
 bool Text_Input::setup(){
-    cout << "Setting up Text Input enviroment." << endl;
+    std::cout << "Setting up Text Input enviroment." << std::endl;
     
     in_file.open(filepath);
     
@@ -26,12 +24,12 @@ bool Text_Input::reachedEND(){ //Check if eof was reached
 
 //MARK: Extractors
 void Text_Input::extractMain(){  //Extracts line : delimiter '\n'
-    string line {};
+    std::string line {};
     
     getline(in_file, line);
     data.originalLine_String = line;
     
-    string tempWord {};
+    std::string tempWord {};
     for (auto c : line) {
         if (c == ' ') {
             data.originalLine_Vector.push_back(tempWord);
@@ -45,7 +43,7 @@ void Text_Input::extractMain(){  //Extracts line : delimiter '\n'
 }
 
 void Text_Input::extractStops(){
-    string line {};
+    std::string line {};
 
     while (!reachedEND()) {
         getline(in_file, line);
@@ -63,8 +61,8 @@ void Text_Input::finish(){
 Text_Input::Text_Input(LineStorage & data, type entryType)
 :Input(data, entryType)
 {
-    string filetype {}, line {};
-    string folder = "Resources/";
+    std::string filetype {}, line {};
+    std::string folder = "Resources/";
     
     switch (entryType) {
         case typeStops:
@@ -77,14 +75,14 @@ Text_Input::Text_Input(LineStorage & data, type entryType)
             break;
     }
     std::cout << "Enter " << filetype << " file name inside Resources folder:" << std::endl;
-    getline(cin, line);
+    getline(std::cin, line);
     
     folder += line;
-    folder+= ".txt";
+    folder += ".txt";
     
     filepath = folder;
     
-    cout << "Created Text_Input object for reading." << endl;
+    std::cout << "Created Text_Input object for reading." << std::endl;
     
 }
 

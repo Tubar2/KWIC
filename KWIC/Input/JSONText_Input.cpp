@@ -13,7 +13,7 @@ JSON_Input::JSON_Input(LineStorage & data, type entryType)
 :Input(data, entryType)
 {
     
-    string filename {"Resources/"}, line{}, filetype{};
+    std::string filename {"Resources/"}, line{}, filetype{};
     
     switch (entryType) {
         case typeStops:
@@ -26,19 +26,19 @@ JSON_Input::JSON_Input(LineStorage & data, type entryType)
             break;
     }
     
-    cout << "Enter JSON " << filetype << " file name: (no txt needed)" << endl;
-    getline(cin, line);
+    std::cout << "Enter JSON " << filetype << " file name: (no txt needed)" << std::endl;
+    getline(std::cin, line);
     
     filename += line + ".JSON";
     
     filepath = filename;
     
-    cout << "Created JSON_Input object for reading." << endl;
+    std::cout << "Created JSON_Input object for reading." << std::endl;
 }
 
 bool JSON_Input::setup()
 {
-    cout << "Setting up JSON Input enviroment." << endl;
+    std::cout << "Setting up JSON Input enviroment." << std::endl;
     
     in_file.open(filepath);
     
@@ -46,7 +46,7 @@ bool JSON_Input::setup()
 }
 
 void JSON_Input::extractStops(){
-    string line {};
+    std::string line {};
     std::stringstream sstr;
     sstr << in_file.rdbuf();
     json j = json::parse(sstr.str());
