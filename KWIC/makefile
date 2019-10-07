@@ -29,7 +29,7 @@ main_dblp.o : main_dblp.cpp Input/DBLP_Input.hpp CircularShifter.hpp Alphabetize
 	g++ -std=c++14 -c main_dblp.cpp -g -Wall -lcurl -I single_include/
 
 clean :
-	rm KWIC Main_dblp main.o main_dblp.o Alphabetizer.o CircularShifter.o DBLP_Input.o I_Input.o Input.o LineStorage.o Output.o Text_Input.o Text_Output.o
+	rm KWIC Main_dblp *.o
 
 #del KWIC main.o LineStorage.o CircularShifter.o Alphabetizer.o I_Input.o Input.o Text_Input.o
 #windows
