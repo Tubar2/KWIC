@@ -26,10 +26,10 @@ JSON_Input::JSON_Input(LineStorage & data, type entryType)
             break;
     }
     
-    std::cout << "Enter JSON " << filetype << " file name: (no txt needed)" << std::endl;
+    std::cout << "Enter json " << filetype << " file name: (no .json needed)" << std::endl;
     getline(std::cin, line);
     
-    filename += line + ".JSON";
+    filename += line + ".json";
     
     filepath = filename;
     
