@@ -1,8 +1,8 @@
 #include <iostream>
+#include <gtest/gtest.h>
+
 #include "../Alphabetizer.hpp"
 #include "../LineStorage.hpp"
-
-#include <gtest/gtest.h>
 
 class EmptyAlphabetizerTest : public testing::Test{
 protected:
