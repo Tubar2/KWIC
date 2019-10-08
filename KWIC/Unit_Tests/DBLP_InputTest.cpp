@@ -13,7 +13,6 @@ protected:
 
     DBLP_Input myinput{data, inputs};
 
-
     void SetUp() override{
         
     }
@@ -21,3 +20,7 @@ protected:
 
     }
 };
+
+TEST_F(DBLP_Input_Test, input){
+    
+}
