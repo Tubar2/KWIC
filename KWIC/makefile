@@ -26,10 +26,13 @@ JSONText_Input.o : Input/JSONText_Input.cpp Input/JSONText_Input.hpp Input/I_Inp
 Terminal_Output.o : Output/Terminal_Output.hpp Output/Output.cpp Output/Output.hpp
 	g++ -std=c++17 -c Output/Terminal_Output.cpp -g -Wall
 
+SRCS := $(shell find . -name '*.cpp')
+SRCS2 := *.o
+
+Test : $(SRCS)
+	make
+	rm main.o KWIC
+	g++ -std=c++17 -o Test main_gtest.cpp $(SRCS2) -lcurl -lgtest -lpthread
 
 clean :
-	rm KWIC *.o
-
-#del KWIC main.o LineStorage.o CircularShifter.o Alphabetizer.o I_Input.o Input.o Text_Input.o
-#windows
-	
+	rm Test KWIC *.o
