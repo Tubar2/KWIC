@@ -188,10 +188,3 @@ TEST_F(FilledLineStorageTest, methodCall_deletePrevInfo){
     ASSERT_TRUE(data.shiftedVariations.empty());
     ASSERT_FALSE(data.stopWords.empty());
 }
-
-int main(int argc, char **argv){
-
-    testing::InitGoogleTest(&argc, argv);
-
-    return RUN_ALL_TESTS();
-}
