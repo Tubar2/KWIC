@@ -10,11 +10,11 @@
 
 //MARK: Constructors
 Input::Input(std::string filepath, LineStorage & data, type entryType) //3 Args Constructor
-: filepath(filepath), data(data), entryType(entryType) {
+: entryType(entryType), filepath(filepath), data(data) {
 }
 
 Input::Input(LineStorage & data, type entryType) //2 Args Contructor
-: data(data), entryType(entryType) {
+: entryType(entryType), data(data){
     
 }
 
