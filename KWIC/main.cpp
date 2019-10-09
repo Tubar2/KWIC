@@ -33,10 +33,10 @@ int main(int argc, const char * argv[]) {
     
     //Creating new Input objects
     DBLP_Input input(data, inputs);
-    JSON_Input words(data, stops);
+    Text_Input words(data, stops);
     
     //Creating output object
-    Text_Output to(data.shiftedVariations);
+    JSON_Output to(data.shiftedVariations);
     
     //Assembles Factory with corresponding types
     Factory factory{input, words, to, data};
