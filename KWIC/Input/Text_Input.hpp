@@ -34,7 +34,8 @@ public:
     bool reachedEND() override;  //Check if eof was reached
     
     //MARK: Constructor
-    Text_Input(LineStorage & data, type entryType);  //Constructor
+    Text_Input(std::string name, LineStorage & data, type entryType); //3 Args Construcotr
+    Text_Input(LineStorage & data, type entryType);  //2 Args Constructor
     
     //MARK: Destructor
     ~Text_Input() = default; //Destructor

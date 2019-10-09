@@ -57,8 +57,13 @@ void Text_Input::finish(){
     
 }
 
-//MARK: Constructor
-Text_Input::Text_Input(LineStorage & data, type entryType)
+//MARK: Constructors
+Text_Input::Text_Input(std::string name, LineStorage & data, type entryType) //3 Args Constructor
+:Input(name, data, entryType){
+
+}
+
+Text_Input::Text_Input(LineStorage & data, type entryType) //2 Args Constructor
 :Input(data, entryType)
 {
     std::string filetype {}, line {};
