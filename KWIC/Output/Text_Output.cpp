@@ -14,8 +14,7 @@ void Text_Output::setup(){
     out_file.open(outputTitle, std::ios_base::trunc);
     
     if (!out_file.is_open()) {
-        std::cout << "Error creating output file." << std::endl;
-        exit(2);
+        throw "Couldn't open file.";
     } else {
         std::cout << "Output file created succesfully." << std::endl;
     }
@@ -34,8 +33,13 @@ void Text_Output::close(){
     out_file.close();
 }
 
-//MARK: Construcotr
-Text_Output::Text_Output(std::vector<std::string> & data)
+//MARK: Constructors
+Text_Output::Text_Output(std::string name, std::vector<std::string> & data)
+:Output(name, data){
+
+}
+
+Text_Output::Text_Output(std::vector<std::string> & data) //2 Args Constructor
 :Output(data){
     
     std::string filepath {"Exits/"}, line{};

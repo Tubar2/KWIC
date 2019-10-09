@@ -23,8 +23,9 @@ private:
     
 public:
     
-    //MARK: Constructor
-    Text_Output(std::vector<std::string> & data);
+    //MARK: Constructors
+    Text_Output(std::string name, std::vector<std::string> &data); //2 Args Constructor
+    Text_Output(std::vector<std::string> & data); //1 Arg Constructor
     
 };
 
