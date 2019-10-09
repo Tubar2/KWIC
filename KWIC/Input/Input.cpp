@@ -10,11 +10,11 @@
 
 //MARK: Constructors
 Input::Input(std::string filepath, LineStorage & data, type entryType) //3 Args Constructor
-: entryType(entryType), filepath(filepath), data(data) {
+: filepath(filepath), data(data), entryType(entryType) {
 }
 
-Input::Input(LineStorage & data, type entryType)
-: entryType(entryType), data(data){
+Input::Input(LineStorage & data, type entryType) //2 Args Contructor
+: data(data), entryType(entryType) {
     
 }
 
@@ -26,8 +26,8 @@ void Input::open(){
         std::cout << "Open() successfully executed." << std::endl;
     }
     else{
-        std::cout << "Open() unsuccessfully executed." << std::endl;
-        exit(1);
+        std::cout << "Open() unsuccessful." << std::endl;
+        throw "Error opening.";
     }
 }
 
