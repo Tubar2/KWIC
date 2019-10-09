@@ -31,11 +31,11 @@ int main(int argc, const char * argv[]) {
     LineStorage data;
     
     //Creating new Input objects
-    JSON_Input input(data, inputs);
+    DBLP_Input input(data, inputs);
     JSON_Input words(data, stops);
     
     //Creating output object
-    Text_Output to(data.shiftedVariations);
+    Terminal_Output to(data.shiftedVariations);
     
     //Assembles Factory with corresponding types
     Factory factory{input, words, to, data};
