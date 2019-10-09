@@ -88,8 +88,7 @@ void DBLP_Input::extractMain(){
 
 // TODO
 void DBLP_Input::extractStops(){
-    std::cout << "can't extract stop words from dblp site" << std::endl;
-    exit(15);
+    throw "Stop words extraction from dblp site not supported.";
 }
 
 bool DBLP_Input::reachedEND() {
