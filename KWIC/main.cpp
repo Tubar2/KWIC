@@ -31,7 +31,7 @@ int main(int argc, const char * argv[]) {
     LineStorage data;
     
     //Creating new Input objects
-    DBLP_Input input(data, inputs);
+    JSON_Input input(data, inputs);
     JSON_Input words(data, stops);
     
     //Creating output object

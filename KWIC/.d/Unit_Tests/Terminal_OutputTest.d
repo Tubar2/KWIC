@@ -1,4 +1,6 @@
-.o/./main_gtest.o: main_gtest.cpp \
+.o/./Unit_Tests/Terminal_OutputTest.o: Unit_Tests/Terminal_OutputTest.cpp \
+  Unit_Tests/../Output/Terminal_Output.hpp \
+  Unit_Tests/../Output/Output.hpp \
   /Library/Developer/CommandLineTools/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/pthread.h \
@@ -218,9 +220,11 @@
   /Library/Developer/CommandLineTools/usr/include/c++/v1/__bsd_locale_defaults.h \
   /Library/Developer/CommandLineTools/usr/include/c++/v1/bitset \
   /Library/Developer/CommandLineTools/usr/include/c++/v1/__bit_reference \
-  /usr/local/include/gtest/gtest.h \
+  /Library/Developer/CommandLineTools/usr/include/c++/v1/fstream \
   /Library/Developer/CommandLineTools/usr/include/c++/v1/vector \
   /Library/Developer/CommandLineTools/usr/include/c++/v1/__split_buffer \
+  Unit_Tests/../Output/I_Output.hpp Unit_Tests/../LineStorage.hpp \
+  /usr/local/include/gtest/gtest.h \
   /usr/local/include/gtest/internal/gtest-internal.h \
   /usr/local/include/gtest/internal/gtest-port.h \
   /Library/Developer/CommandLineTools/usr/include/c++/v1/stddef.h \
@@ -270,6 +274,10 @@
   /usr/local/include/gtest/gtest-test-part.h \
   /usr/local/include/gtest/gtest-typed-test.h \
   /usr/local/include/gtest/gtest_pred_impl.h
+
+Unit_Tests/../Output/Terminal_Output.hpp:
+
+Unit_Tests/../Output/Output.hpp:
 
 /Library/Developer/CommandLineTools/usr/include/c++/v1/iostream:
 
@@ -709,11 +717,17 @@
 
 /Library/Developer/CommandLineTools/usr/include/c++/v1/__bit_reference:
 
-/usr/local/include/gtest/gtest.h:
+/Library/Developer/CommandLineTools/usr/include/c++/v1/fstream:
 
 /Library/Developer/CommandLineTools/usr/include/c++/v1/vector:
 
 /Library/Developer/CommandLineTools/usr/include/c++/v1/__split_buffer:
+
+Unit_Tests/../Output/I_Output.hpp:
+
+Unit_Tests/../LineStorage.hpp:
+
+/usr/local/include/gtest/gtest.h:
 
 /usr/local/include/gtest/internal/gtest-internal.h:
 
