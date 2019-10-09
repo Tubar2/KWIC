@@ -19,6 +19,7 @@
 #include "Output/Terminal_Output.hpp"
 #include "Input/DBLP_Input.hpp"
 #include "Input/JSONText_Input.hpp"
+#include "Output/JSONText_Output.hpp"
 
 
 int main(int argc, const char * argv[]) {
