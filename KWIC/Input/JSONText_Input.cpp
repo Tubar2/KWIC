@@ -8,8 +8,13 @@
 
 #include "JSONText_Input.hpp"
 
-//MARK: Constructor
-JSON_Input::JSON_Input(LineStorage & data, type entryType)
+//MARK: Constructors
+JSON_Input::JSON_Input(std::string name, LineStorage & data, type entryType)
+:Input(name, data, entryType){
+    
+}
+
+JSON_Input::JSON_Input(LineStorage & data, type entryType) //2 Args Constructor
 :Input(data, entryType)
 {
     

@@ -25,8 +25,9 @@ class JSON_Input : public Input{
 public:
     std::ifstream in_file {};
 
-    //MARK: Constructor
-    JSON_Input(LineStorage & data, type entryType);
+    //MARK: Constructors
+    JSON_Input(std::string name, LineStorage & data, type entryType); //3 Args Constructor
+    JSON_Input(LineStorage & data, type entryType); //2 Args Constructor
 
     //MARK: Setup
     bool setup() override;
