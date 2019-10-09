@@ -24,7 +24,7 @@ void Text_Output::setup(){
 void Text_Output::print(){
     
     for (auto line : data) {
-        out_file << line << std::endl;;
+        out_file << line << std::endl;
     }
     
 }
