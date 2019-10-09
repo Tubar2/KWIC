@@ -45,7 +45,7 @@ void Input::extract(){
         break;
             
         default:
-            exit(2);
+        throw "Invalid type extraction";
             break;
     }
 }
