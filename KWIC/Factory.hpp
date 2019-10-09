@@ -28,12 +28,28 @@ public:
     void run(){
         
         //Opening inputs
-        reader_m.open();
-        reader_s.open();
+        try
+        {
+            reader_m.open();
+            reader_s.open();
+        }
+        catch(const char* e)
+        {
+            std::cout << e << std::endl;
+            exit(1);
+        }
         
         //Extracting stop Words then closing reader
-        reader_s.extract();
-        reader_s.close();
+        try
+        {
+            reader_s.extract();
+            reader_s.close();
+        }
+        catch(const char* e)
+        {
+            std::cout << e << std::endl;
+            exit(2);
+        }
         
         //Creating CircularShifter object pointer
         CircularShifter * cs = new CircularShifter(data.originalLine_Vector);
@@ -42,12 +58,28 @@ public:
         Alphabetizer * alph = new Alphabetizer(data);
         
         //Opening output file
-        printer.assemble();
+        try
+        {
+            printer.assemble();
+        }
+        catch(const char* e)
+        {
+            std::cerr << e << std::endl;
+            exit(3);
+        }
         
         //Extracting text 1 line at a time
         do {
             data.deletePrevInfo();
-            reader_m.extract();      //One line extraction
+            try
+            {
+                reader_m.extract();      //One line extraction
+            }
+            catch(const char* e)
+            {
+                std::cerr << e << std::endl;
+                exit(4);
+            }
             
             //Creating all shifts for stored line
             data.shiftedVariations = cs->makeCircularShifts();
