@@ -49,7 +49,7 @@ all: $(BIN)
 
 .PHONY: clean
 clean:
-	$(RM) -r $(OBJDIR) $(DEPDIR) $(BIN)
+	$(RM) -r $(OBJDIR) $(DEPDIR) $(BIN) Test
 
 $(BIN): $(OBJS)
 	$(LD) -o $@ $^ $(LDFLAGS) $(LDLIBS)
@@ -64,16 +64,11 @@ $(OBJDIR)/%.o: %.cpp $(DEPDIR)/%.d
 .PRECIOUS: $(DEPDIR)/%.d
 $(DEPDIR)/%.d: ;
 
-######################TEST######################################
+######################TEST######################
 
-#Defines test source files (all but main)
-#TESTSRCS := $(shell find . -name '*.cpp' ! -name 'main.cpp')
-# object files, auto generated from source files
-#TESTOBJS := $(patsubst %,$(OBJDIR)/%.o,$(basename $(TESTSRCS)))
-# dependency files, auto generated from source files
-#DEPS := $(patsubst %,$(DEPDIR)/%.d,$(basename $(SRCS)))
-#LDFLAGS := -lcurl -lgtest -lpthread
+
 #Tests
+#Defines test source files (all but main)
 TESTSRCS := $(shell find . -name '*.cpp' ! -name 'main.cpp')
 
 TESTLDFLAGS := -lcurl -lgtest -lpthread
@@ -81,13 +76,20 @@ TESTLDFLAGS := -lcurl -lgtest -lpthread
 TESTOBJS := $(patsubst %,$(OBJDIR)/%.o,$(basename $(TESTSRCS)))
 # dependency files, auto generated from source files
 TESTDEPS := $(patsubst %,$(DEPDIR)/%.d,$(basename $(TESTSRCS)))
+
+# compilers (at least gcc and clang) don't create the subdirectories automatically
+$(shell mkdir -p $(dir $(TESTOBJS)) >/dev/null)
+$(shell mkdir -p $(dir $(TESTDEPS)) >/dev/null)
+
 Test : $(TESTOBJS)
 	$(CXX) -o $@ $^ $(TESTLDFLAGS) $(LDLIBS)
 
 
+################################################
 
 
 print-% :
 	@echo $* = $($*)
 
 -include $(DEPS)
+-include $(TESTDEPS)
