@@ -46,11 +46,8 @@ TEST_F(noQuery_DBLP_Input_Test, methodCall_setup_noQuery){
     ASSERT_FALSE(myinput.setup());
 }
 
-TEST_F(noQuery_DBLP_Input_Test, methodCall_extract_noQuery){
+TEST_F(noQuery_DBLP_Input_Test, methodCall_throws_open_noQuery){
     //Assert
-    myinput.open();
-    myinput.extract();
-
-    ASSERT_TRUE(data.originalLine_Vector.empty());
+    ASSERT_ANY_THROW(myinput.open());
 }
 
