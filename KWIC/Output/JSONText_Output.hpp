@@ -9,7 +9,7 @@ using json = nlohmann::json;
 class JSON_Output: public Output {
     
 protected:
-    json j;
+    json j,k;
     std::ofstream out_file {};
     
 private:
@@ -20,7 +20,7 @@ private:
 public:
     
     //MARK: Constructor
-    Text_Output(std::vector<std::string> & data);
+    JSON_Output(std::vector<std::string> & data);
     
 };
 

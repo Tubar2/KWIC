@@ -13,10 +13,33 @@ void JSON_Output::setup(){
     }
 }
 
+//writes lines in json
 void JSON_Output::print(){
-    
+    json j;
     for (auto line : data) {
-        out_file << line << std::endl;;
+        j.push_back(line);
     }
+    k["titles"].push_back(j);
+}
+
+//MARK: closeFile
+void JSON_Output::close(){
+
+    out_file << k.dump(4); //Passes json structure to jsonfile
+    out_file.close();
+}
+
+//MARK: Construcotr
+JSON_Output::JSON_Output(std::vector<std::string> & data)
+:Output(data){
     
+    std::string filepath {"Exits/"}, line{};
+    std::cout << "Enter output file name: (no .json needed)" << std::endl;
+    getline(std::cin, line);
+    
+    filepath += line + ".json";
+    
+    outputTitle = filepath;
+    
+    std::cout << "JSON_Output object created." << std::endl;
 }
