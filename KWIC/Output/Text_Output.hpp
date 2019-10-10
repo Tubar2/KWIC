@@ -9,9 +9,10 @@
 #ifndef Text_Output_hpp
 #define Text_Output_hpp
 
-#include "Output.hpp"
+#include "complexOutput.hpp"
 
-class Text_Output: public Output {
+template<typename Storage>
+class Text_Output: public complexOutput<Storage> {
     
 protected:
     std::ofstream out_file {};
