@@ -6,6 +6,7 @@
 //  Copyright © 2019 Ricardo de Castro Giometti Santos. All rights reserved.
 //
 
+#define CHECK_SHIFTS 0
 #include "CircularShifter.hpp"
 
 // Auxiliar Function
@@ -37,7 +38,9 @@ std::vector<std::string> CircularShifter::makeCircularShifts(){
         data.push_back(tempWord);
         
         tempShift = joinVector(data);
-        std::cout << "Shift (" << (i+1) << "/" << expectedShifts << "): " << tempShift << std::endl;
+        if (CHECK_SHIFTS) {
+            std::cout << "Shift (" << (i+1) << "/" << expectedShifts << "): " << tempShift << std::endl;
+        }
         allShifts.push_back(tempShift);
     }
     

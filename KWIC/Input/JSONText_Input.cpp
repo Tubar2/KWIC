@@ -8,8 +8,13 @@
 
 #include "JSONText_Input.hpp"
 
-//MARK: Constructor
-JSON_Input::JSON_Input(LineStorage & data, type entryType)
+//MARK: Constructors
+JSON_Input::JSON_Input(std::string name, LineStorage & data, type entryType)
+:Input(name, data, entryType){
+    
+}
+
+JSON_Input::JSON_Input(LineStorage & data, type entryType) //2 Args Constructor
 :Input(data, entryType)
 {
     
@@ -65,9 +70,7 @@ bool JSON_Input::reachedEND(){ //Check if eof was reached
 //TODO
 void JSON_Input::extractMain()
 {
-    std::cout << "Can't read titles from JSON file due to different possibilities of formats,"
-        << "use DBLP_Input module" << std::endl;
-    exit(17);
+    throw "Can't read titles from JSON";
 }
 
 //MARK: finish

@@ -31,7 +31,8 @@ class DBLP_Input : public Input{
 public:
 
     //MARK: Constructor
-    DBLP_Input(LineStorage & data, type entryType);
+    DBLP_Input(std::string search, LineStorage & data, type entryType); //3 Args Constructor
+    DBLP_Input(LineStorage & data, type entryType); //2 Args Construcotr
 
     //MARK: Setup
     bool setup() override;

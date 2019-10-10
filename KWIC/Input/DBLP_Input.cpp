@@ -9,7 +9,12 @@
 #include "DBLP_Input.hpp"
 
 //MARK: Constructor
-DBLP_Input::DBLP_Input(LineStorage & data, type entryType)
+DBLP_Input::DBLP_Input(std::string search, LineStorage & data, type entryType) //3 Args Construcotr
+:Input(search, data, entryType){
+
+}
+
+DBLP_Input::DBLP_Input(LineStorage & data, type entryType) //2 Args Construcotr
 :Input(data, entryType)
 {
     std::string line{};
@@ -51,6 +56,10 @@ bool DBLP_Input::setup(){
     }
     title_count = static_cast<int>(all_titles_vector.size());
     title_iterator = 0;
+
+    if(reachedEND()){
+        return false;
+    }
     
 
     return true;
@@ -79,8 +88,7 @@ void DBLP_Input::extractMain(){
 
 // TODO
 void DBLP_Input::extractStops(){
-    std::cout << "can't extract stop words from dblp site" << std::endl;
-    exit(15);
+    throw "Stop words extraction from dblp site not supported.";
 }
 
 bool DBLP_Input::reachedEND() {

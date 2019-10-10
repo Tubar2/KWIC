@@ -24,19 +24,15 @@
 
 int main(int argc, const char * argv[]) {
     
-    //Definig both types of enums
-    type stops = typeStops;
-    type inputs = typeInput;
-    
     //Creating Line Storage
     LineStorage data;
     
     //Creating new Input objects
-    DBLP_Input input(data, inputs);
-    Text_Input words(data, stops);
+    DBLP_Input input(data, typeInput);
+    Text_Input words(data, typeStops);
     
     //Creating output object
-    JSON_Output to(data.shiftedVariations);
+    Terminal_Output to(data.shiftedVariations);
     
     //Assembles Factory with corresponding types
     Factory factory{input, words, to, data};

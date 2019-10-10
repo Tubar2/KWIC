@@ -13,7 +13,7 @@ Input::Input(std::string filepath, LineStorage & data, type entryType) //3 Args 
 : entryType(entryType), filepath(filepath), data(data) {
 }
 
-Input::Input(LineStorage & data, type entryType)
+Input::Input(LineStorage & data, type entryType) //2 Args Contructor
 : entryType(entryType), data(data){
     
 }
@@ -26,8 +26,8 @@ void Input::open(){
         std::cout << "Open() successfully executed." << std::endl;
     }
     else{
-        std::cout << "Open() unsuccessfully executed." << std::endl;
-        exit(1);
+        std::cout << "Open() unsuccessful." << std::endl;
+        throw "Error opening.";
     }
 }
 
@@ -45,7 +45,7 @@ void Input::extract(){
         break;
             
         default:
-            exit(2);
+        throw "Invalid type extraction";
             break;
     }
 }
