@@ -9,21 +9,20 @@
 #ifndef Terminal_Output_hpp
 #define Terminal_Output_hpp
 
-#include "Output.hpp"
+#include "simpleOutput.hpp"
 #include <iostream>
 
-class Terminal_Output : public Output{
+template <typename T>
+class Terminal_Output : public simpleOutput<T>{
     
 private:
     
-    void setup() override;
     void print() override;
-    void close() override;
     
 public:
     
     //MARK: Constructor
-    Terminal_Output(std::vector<std::string> &data);
+    Terminal_Output(T &data);
     
 };
 

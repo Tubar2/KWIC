@@ -8,21 +8,15 @@
 
 #include "Terminal_Output.hpp"
 
-Terminal_Output::Terminal_Output(std::vector<std::string> &data)
-:Output("", data){
+template<typename T>
+Terminal_Output<T>::Terminal_Output(T &data)
+:simpleOutput::data(data){
     
 }
 
-void Terminal_Output::print(){
+template<typename T>
+void Terminal_Output<T>::print(){
     for (auto line : data) {
         std::cout << line << std::endl;;
     }
-}
-
-void Terminal_Output::close(){
-    //No need to do anything
-}
-
-void Terminal_Output::setup(){
-    //Setup need's no previous setup on terminal output
 }
