@@ -23,16 +23,12 @@
 
 int main(int argc, const char * argv[]) {
     
-    //Definig both types of enums
-    type stops = typeStops;
-    type inputs = typeInput;
-    
     //Creating Line Storage
     LineStorage data;
     
     //Creating new Input objects
-    DBLP_Input input(data, inputs);
-    JSON_Input words(data, stops);
+    Text_Input input(data, typeInput);
+    Text_Input words(data, typeStops);
     
     //Creating output object
     Terminal_Output to(data.shiftedVariations);
