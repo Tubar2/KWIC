@@ -70,9 +70,7 @@ bool JSON_Input::reachedEND(){ //Check if eof was reached
 //TODO
 void JSON_Input::extractMain()
 {
-    std::cout << "Can't read titles from JSON file due to different possibilities of formats,"
-        << "use DBLP_Input module" << std::endl;
-    exit(17);
+    throw "Can't read titles from JSON";
 }
 
 //MARK: finish

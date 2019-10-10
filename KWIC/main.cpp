@@ -19,20 +19,17 @@
 #include "Output/Terminal_Output.hpp"
 #include "Input/DBLP_Input.hpp"
 #include "Input/JSONText_Input.hpp"
+#include "Output/JSONText_Output.hpp"
 
 
 int main(int argc, const char * argv[]) {
-    
-    //Definig both types of enums
-    type stops = typeStops;
-    type inputs = typeInput;
     
     //Creating Line Storage
     LineStorage data;
     
     //Creating new Input objects
-    DBLP_Input input(data, inputs);
-    JSON_Input words(data, stops);
+    DBLP_Input input(data, typeInput);
+    Text_Input words(data, typeStops);
     
     //Creating output object
     Terminal_Output to(data.shiftedVariations);
