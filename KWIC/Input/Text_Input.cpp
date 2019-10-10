@@ -8,55 +8,6 @@
 
 #include "Text_Input.hpp"
 
-//MARK: setup
-bool Text_Input::setup(){
-    std::cout << "Setting up Text Input enviroment." << std::endl;
-    
-    in_file.open(filepath);
-    
-    return in_file.is_open();
-}
-
-//MARK: reachedEND
-bool Text_Input::reachedEND(){ //Check if eof was reached
-    return in_file.eof();
-}
-
-//MARK: Extractors
-void Text_Input::extractMain(){  //Extracts line : delimiter '\n'
-    std::string line {};
-    
-    getline(in_file, line);
-    data.originalLine_String = line;
-    
-    std::string tempWord {};
-    for (auto c : line) {
-        if (c == ' ') {
-            data.originalLine_Vector.push_back(tempWord);
-            tempWord = "";
-        }
-        else{
-            tempWord += c;
-        }
-    }
-    data.originalLine_Vector.push_back(tempWord);
-}
-
-void Text_Input::extractStops(){
-    std::string line {};
-
-    while (!reachedEND()) {
-        getline(in_file, line);
-        data.stopWords.push_back(line);
-    }
-}
-
-//MARK: Finish
-void Text_Input::finish(){
-    in_file.close();
-    
-}
-
 //MARK: Constructors
 Text_Input::Text_Input(std::string name, LineStorage & data, type entryType) //3 Args Constructor
 :Input(name, data, entryType){
@@ -88,6 +39,56 @@ Text_Input::Text_Input(LineStorage & data, type entryType) //2 Args Constructor
     filepath = folder;
     
     std::cout << "Created Text_Input object for reading." << std::endl;
+}
+
+//MARK: setup
+bool Text_Input::setup(){
+    std::cout << "Setting up Text Input enviroment." << std::endl;
     
+    in_file.open(filepath);
+    
+    return in_file.is_open();
+}
+
+//MARK: Extractors
+//extractMain
+void Text_Input::extractMain(){  //Extracts line : delimiter '\n'
+    std::string line {};
+    
+    getline(in_file, line);
+    data.originalLine_String = line;
+    
+    std::string tempWord {};
+    for (auto c : line) {
+        if (c == ' ') {
+            data.originalLine_Vector.push_back(tempWord);
+            tempWord = "";
+        }
+        else{
+            tempWord += c;
+        }
+    }
+    data.originalLine_Vector.push_back(tempWord);
+}
+
+//extractStops
+void Text_Input::extractStops(){
+    std::string line {};
+
+    while (!reachedEND()) {
+        getline(in_file, line);
+        data.stopWords.push_back(line);
+    }
+}
+
+//MARK: finish
+void Text_Input::finish(){
+    in_file.close();
+    
+}
+
+//MARK: endReached
+bool Text_Input::endReached(){ //Check if eof was reached
+    return in_file.eof();
 }
 

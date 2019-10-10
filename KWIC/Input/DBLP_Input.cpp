@@ -64,7 +64,8 @@ bool DBLP_Input::setup(){
 
     return true;
 }
-//Extracts line : delimiter '\n'
+
+//MARK: extractMain: delimiter '\n'
 void DBLP_Input::extractMain(){  
     std::string line;
     
@@ -86,12 +87,18 @@ void DBLP_Input::extractMain(){
     title_iterator++;
 }
 
-// TODO
+//MARK: extractStops
 void DBLP_Input::extractStops(){
     throw "Stop words extraction from dblp site not supported.";
 }
 
-bool DBLP_Input::reachedEND() {
+//MARK: finish
+void DBLP_Input::finish() {
+    std::cout << "Closing DBLP_Input resources" << std::endl;
+}
+
+
+bool DBLP_Input::endReached() {
     if (title_iterator == title_count)
     {
         return true;
@@ -99,9 +106,7 @@ bool DBLP_Input::reachedEND() {
     return false;
 }
 
-void DBLP_Input::finish() {
-    std::cout << "Closing DBLP_Input resources" << std::endl;
-}
+///////////
 
 std::size_t DBLP_Input::write_data(void* buf, std::size_t size, std::size_t nmemb, void* userp)
 {

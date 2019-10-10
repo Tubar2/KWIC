@@ -9,7 +9,7 @@
 #include "JSONText_Input.hpp"
 
 //MARK: Constructors
-JSON_Input::JSON_Input(std::string name, LineStorage & data, type entryType)
+JSON_Input::JSON_Input(std::string name, LineStorage & data, type entryType) //3Args Constructor
 :Input(name, data, entryType){
     
 }
@@ -41,6 +41,7 @@ JSON_Input::JSON_Input(LineStorage & data, type entryType) //2 Args Constructor
     std::cout << "Created JSON_Input object for reading." << std::endl;
 }
 
+//MARK: setup
 bool JSON_Input::setup()
 {
     std::cout << "Setting up JSON Input enviroment." << std::endl;
@@ -50,6 +51,13 @@ bool JSON_Input::setup()
     return in_file.is_open();
 }
 
+//MARK: extractMain
+void JSON_Input::extractMain()
+{
+    throw "Can't read titles from JSON.";
+}
+
+//MARK: extractStops
 void JSON_Input::extractStops(){
     std::string line {};
     std::stringstream sstr;
@@ -62,18 +70,12 @@ void JSON_Input::extractStops(){
     }
 }
 
-//MARK: reachedEND
-bool JSON_Input::reachedEND(){ //Check if eof was reached
-    return in_file.eof();
-}
-
-//TODO
-void JSON_Input::extractMain()
-{
-    throw "Can't read titles from JSON.";
-}
-
 //MARK: finish
 void JSON_Input::finish(){//Closes file
     in_file.close();
+}
+
+//MARK: reachedEND
+bool JSON_Input::endReached(){ //Check if eof was reached
+    return in_file.eof();
 }

@@ -28,32 +28,7 @@
 using json = nlohmann::json;
 
 class DBLP_Input : public Input{
-public:
-
-    //MARK: Constructor
-    DBLP_Input(std::string search, LineStorage & data, type entryType); //3 Args Constructor
-    DBLP_Input(LineStorage & data, type entryType); //2 Args Construcotr
-
-    //MARK: Setup
-    bool setup() override;
-
-    void extractStops() override; //Extracts all stop words in a std::vector<std::string>
-
-    //Extracts line : delimiter '\n'
-    void extractMain() override; // search for query in DBLP api and stores all titles in a vector of strings
-
-    // return true when all titles in all_titles_vector have been accessed
-    bool reachedEND() override;
-
-    //MARK: finish
-    void finish() override;//Closes file
-
-    //MARK: Destructor
-    virtual ~DBLP_Input() = default;
-
-
 private:
-
     std::vector<std::string> all_titles_vector;
     int title_iterator;
     int title_count;
@@ -65,11 +40,24 @@ private:
     struct curl_dter{void operator()(CURL* curl) const
         { if(curl) curl_easy_cleanup(curl); }};
 
-    // A smart pointer to automatically clean up out CURL session
-    using curl_uptr = std::unique_ptr<CURL, curl_dter>;
+    using curl_uptr = std::unique_ptr<CURL, curl_dter>;// A smart pointer to automatically clean up out CURL session
+    
+    std::string get_url(std::string const& url);       // Download the URL into a `std::string`.
 
-    // download the URL into a `std::string`.
-    std::string get_url(std::string const& url);
+    //MARK: Overriden functions
+    bool setup() override;
+    void extractStops() override; //Extracts all stop words in a std::vector<std::string>
+    void extractMain() override; // search for query in DBLP api and stores all titles in a vector of strings
+    void finish() override;//Closes file
+    bool endReached() override;// return true when all titles in all_titles_vector have been accessed
+
+public:
+
+    //MARK: Constructor
+    DBLP_Input(std::string search, LineStorage & data, type entryType); //3 Args Constructor
+    DBLP_Input(LineStorage & data, type entryType); //2 Args Construcotr
+    //MARK: Destructor
+    virtual ~DBLP_Input() = default;
 };
 
 #endif
