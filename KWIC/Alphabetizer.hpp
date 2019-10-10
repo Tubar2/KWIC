@@ -18,17 +18,19 @@
 
 #include <iostream>
 #include <algorithm>
-#include "LineStorage.hpp"
+#include "Storables/I_Storable.hpp"
 
+template<typename T>
 class Alphabetizer {
-    LineStorage & data;
+    I_Storable<T> data;
     
     
 public:
     void alphabetiseData();
     void removeStops();
     
-    Alphabetizer(LineStorage & newdata);
+    //Constructor
+    Alphabetizer(I_Storable<T> &&newdata);
     
 };
 

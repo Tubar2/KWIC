@@ -27,13 +27,15 @@ bool compareString(std::string a, std::string b){
     return bigger;
 }
 
-Alphabetizer::Alphabetizer(LineStorage & newdata)
-:data(newdata)
+template <typename T>
+Alphabetizer<T>::Alphabetizer<T>(I_Storable<T> && newdata)
+:data(std::move(newdata))
 {
     std::cout << "Alphabetizer created" << std::endl;
 }
 
-void Alphabetizer::removeStops(){
+template <typename T>
+void Alphabetizer<T>::removeStops(){
     
     std::string firstWord {};
     bool change = false;
@@ -59,6 +61,7 @@ void Alphabetizer::removeStops(){
     }
 }
 
-void Alphabetizer::alphabetiseData(){
+template <typename T>
+void Alphabetizer<T>::alphabetiseData(){
     sort(data.shiftedVariations.begin(), data.shiftedVariations.end(), compareString);
 }
