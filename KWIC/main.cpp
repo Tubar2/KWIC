@@ -19,6 +19,7 @@
 #include "Output/Terminal_Output.hpp"
 #include "Input/DBLP_Input.hpp"
 #include "Input/JSONText_Input.hpp"
+#include "Output/JSONText_Output.hpp"
 
 
 int main(int argc, const char * argv[]) {
@@ -28,10 +29,10 @@ int main(int argc, const char * argv[]) {
     
     //Creating new Input objects
     Text_Input input(data, typeInput);
-    Text_Input words(data, typeStops);
+    JSON_Input words(data, typeStops);
     
     //Creating output object
-    Terminal_Output to(data.shiftedVariations);
+    Text_Output to(data.shiftedVariations);
     
     //Assembles Factory with corresponding types
     Factory factory{input, words, to, data};

@@ -10,7 +10,7 @@ protected:
     type stops = typeStops;
     type inputs = typeInput;
 
-    Text_Input myinput{"Resources/myfile.txt", data, inputs};
+    Text_Input myinput{"Resources/poema.txt", data, inputs};
 };
 
 class NoTitle_Text_Input_Test : public testing::Test{
