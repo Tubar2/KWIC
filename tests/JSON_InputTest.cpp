@@ -1,5 +1,5 @@
-#include "../Input/JSONText_Input.hpp"
-#include "../LineStorage.hpp"
+#include "../src/Input/JSONText_Input.hpp"
+#include "../src/LineStorage.hpp"
 
 #include <gtest/gtest.h>
 
@@ -10,7 +10,7 @@ protected:
     type stops = typeStops;
     type inputs = typeInput;
 
-    JSON_Input myinput{"Resources/stops.json", data, stops};
+    JSON_Input myinput{"../src/Resources/stops.json", data, stops};
 
 };
 

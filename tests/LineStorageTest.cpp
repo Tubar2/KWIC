@@ -1,7 +1,7 @@
 #include <iostream>
 #include <gtest/gtest.h>
 
-#include "../LineStorage.hpp"
+#include "../src/LineStorage.hpp"
 
 class EmptyLineStorageTest : public testing::Test{
 protected:

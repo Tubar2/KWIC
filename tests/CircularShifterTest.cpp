@@ -1,7 +1,7 @@
 #include <iostream>
 #include <gtest/gtest.h>
 
-#include "../CircularShifter.hpp"
+#include "../src/CircularShifter.hpp"
 
 class CircularShifterTest : public testing::Test{
 protected:
