@@ -18,7 +18,7 @@ Input::Input(LineStorage & data, type entryType) //2 Args Contructor
     
 }
 
-//MARK: Setup
+//MARK: Open
 void Input::open(){
     std::cout << "Trying to open." << std::endl;
     
@@ -55,4 +55,10 @@ void Input::close(){
     std::cout << "Closing.." << std::endl;
     
     finish();
+}
+
+//MARK: reachedEND
+bool Input::reachedEND(){
+
+    return endReached();
 }

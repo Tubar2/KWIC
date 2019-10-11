@@ -18,20 +18,14 @@ class Text_Input: public Input{
 private:
     std::ifstream in_file {};
     
-    //MARK: Extractors
+    //MARK: Overriden function
     void extractStops() override; //Extracts each word in a vector<string>
     void extractMain() override;  //Extracts line from main file and separates each word in a vector<string>
-    
-    //MARK: setup
     bool setup() override; //Opens file for reading
-    
-    //MARK: finish
     void finish() override;//Closes file
+    bool endReached() override;  //Check if eof was reached
     
 public:
-    
-    //MARK: reachedEOF
-    bool reachedEND() override;  //Check if eof was reached
     
     //MARK: Constructor
     Text_Input(std::string name, LineStorage & data, type entryType); //3 Args Construcotr

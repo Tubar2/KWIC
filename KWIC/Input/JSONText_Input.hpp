@@ -22,6 +22,18 @@
 using json = nlohmann::json;
 
 class JSON_Input : public Input{
+private:
+    std::vector<std::string> all_titles_vector;
+    int title_iterator;
+    int title_count;
+
+    //MARK: Overriden function
+    bool setup() override;  //Opens url
+    void extractStops() override; //Extracts all stop words in a vector<string>
+    void extractMain() override; // Cant be used
+    bool endReached() override; // return true when all titles in all_titles_vector have been accessed
+    void finish() override;//Closes file
+
 public:
     std::ifstream in_file {};
 
@@ -29,27 +41,8 @@ public:
     JSON_Input(std::string name, LineStorage & data, type entryType); //3 Args Constructor
     JSON_Input(LineStorage & data, type entryType); //2 Args Constructor
 
-    //MARK: Setup
-    bool setup() override;
-
-    void extractStops() override; //Extracts all stop words in a vector<string>
-
-    // Cant be used
-    void extractMain() override; 
-
-    // return true when all titles in all_titles_vector have been accessed
-    bool reachedEND() override;
-
-    //MARK: finish
-    void finish() override;//Closes file
-
     //MARK: Destructor
     virtual ~JSON_Input() = default;
-
-private:
-    std::vector<std::string> all_titles_vector;
-    int title_iterator;
-    int title_count;
 
 };
 #endif

@@ -9,6 +9,7 @@
 #ifndef Factory_hpp
 #define Factory_hpp
 
+#include <memory>
 #include "CircularShifter.hpp"
 #include "Alphabetizer.hpp"
 
@@ -52,10 +53,10 @@ public:
         }
         
         //Creating CircularShifter object pointer
-        CircularShifter * cs = new CircularShifter(data.originalLine_Vector);
+        auto cs = std::make_unique<CircularShifter>(data.originalLine_Vector);
         
         //Creating alphabetizer object pointer
-        Alphabetizer * alph = new Alphabetizer(data);
+        auto alph = std::make_unique<Alphabetizer>(data);
         
         //Opening output file
         try
@@ -91,10 +92,6 @@ public:
             printer.printContent();
             
         } while (!reader_m.reachedEND());
-        
-        //Deleting pointers
-        delete cs;
-        delete alph;
         
         //Closing
         printer.terminate();

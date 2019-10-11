@@ -24,11 +24,6 @@ protected:
     DBLP_Input myinput{"", data, inputs};
 };
 
-TEST_F(withQuery_DBLP_Input_Test, methodCall_setup_filledQuery){
-    //Assert
-    ASSERT_TRUE(myinput.setup());
-}
-
 TEST_F(withQuery_DBLP_Input_Test, methodCall_extract_filledQuery){
     //Solution
     std::vector<std::string> solution {"Parnas", "on", "Parnas", "-", "a", "life", "of", "indecision."};
@@ -39,11 +34,6 @@ TEST_F(withQuery_DBLP_Input_Test, methodCall_extract_filledQuery){
 
     //Assert
     ASSERT_EQ(data.originalLine_Vector, solution);
-}
-
-TEST_F(noQuery_DBLP_Input_Test, methodCall_setup_noQuery){
-    //Assert
-    ASSERT_FALSE(myinput.setup());
 }
 
 TEST_F(noQuery_DBLP_Input_Test, methodCall_throws_open_noQuery){

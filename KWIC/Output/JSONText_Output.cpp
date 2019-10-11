@@ -13,7 +13,7 @@ void JSON_Output::setup(){
     }
 }
 
-//writes lines in json
+// writes lines in json
 void JSON_Output::print(){
     json j;
     for (auto line : data) {
@@ -29,7 +29,7 @@ void JSON_Output::close(){
     out_file.close();
 }
 
-//MARK: Construcotr
+//MARK: Constructor
 JSON_Output::JSON_Output(std::vector<std::string> & data)
 :Output(data){
     

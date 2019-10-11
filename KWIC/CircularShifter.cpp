@@ -51,6 +51,6 @@ std::vector<std::string> CircularShifter::makeCircularShifts(){
 CircularShifter::CircularShifter(std::vector<std::string> & originalLineVector)
 :data(originalLineVector)
 {
-    std::cout << "Circular Shifter object created with " << originalLineVector.size() << " words." << std::endl;
+    std::cout << "Circular Shifter object created successfully." << std::endl;
     
 }

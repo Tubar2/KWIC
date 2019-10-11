@@ -17,12 +17,12 @@
 class Input : public I_Input{
 
 private:
-    
     //Functions that need to be implemented by derived class
+    virtual bool setup() = 0;        //Trys to open
     virtual void extractStops() = 0; //Extracts all stop words in a vector<string>
     virtual void extractMain() = 0;  //Extracts line from main file and separates each word in a vector<string>
-    virtual bool setup() = 0;        //Trys to open
     virtual void finish() = 0;       //Finishes document reading
+    virtual bool endReached() = 0;   //Checks if last line of reading was reached
     
 protected:
     type entryType {};
@@ -31,9 +31,10 @@ protected:
     
 public:
     
-    void extract() override;  //Extracts single line from file into data storage or all stop words
     void open() override;    //Opens url, file, etc...
+    void extract() override;  //Extracts single line from file into data storage or all stop words
     void close() override;  //Closes opend url, file, etc...
+    bool reachedEND() override; //Checks if last line of reading was reached
     
     //MARK: Constructor and Destructor
     Input(std::string filepath, LineStorage & data, type entryType); //3 Args Constructors
