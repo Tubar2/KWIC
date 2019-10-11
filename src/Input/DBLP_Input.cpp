@@ -35,7 +35,7 @@ bool DBLP_Input::setup(){
     // bufilepathrl
     std::string url;
     url.append("https://dblp.org/search/publ/api?q=");
-    url.append(query);
+    url.append(query_adapt(query));
     url.append("&format=json&h=10");
     std::cout << url << std::endl;
     
@@ -106,7 +106,17 @@ bool DBLP_Input::endReached() {
     return false;
 }
 
-///////////
+std::string DBLP_Input::query_adapt(std::string query)
+{
+    for(std::string::iterator it = query.begin(); it != query.end(); it++)
+    {
+        if(*it == ' ')
+        {
+            *it = '+';
+        }
+    }
+    return query;
+}
 
 std::size_t DBLP_Input::write_data(void* buf, std::size_t size, std::size_t nmemb, void* userp)
 {

@@ -1,5 +1,5 @@
-#include "../LineStorage.hpp"
-#include "../Input/Text_Input.hpp"
+#include "../src/LineStorage.hpp"
+#include "../src/Input/Text_Input.hpp"
 
 #include <gtest/gtest.h>
 
@@ -10,7 +10,7 @@ protected:
     type stops = typeStops;
     type inputs = typeInput;
 
-    Text_Input myinput{"Resources/poema.txt", data, inputs};
+    Text_Input myinput{"../src/Resources/poema.txt", data, inputs};
 };
 
 class NoTitle_Text_Input_Test : public testing::Test{

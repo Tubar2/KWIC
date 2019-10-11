@@ -1,8 +1,8 @@
 #include <iostream>
 #include <gtest/gtest.h>
 
-#include "../LineStorage.hpp"
-#include "../Input/DBLP_Input.hpp"
+#include "../src/LineStorage.hpp"
+#include "../src/Input/DBLP_Input.hpp"
 
 class withQuery_DBLP_Input_Test : public testing::Test{
 protected:

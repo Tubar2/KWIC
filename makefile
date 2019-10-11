@@ -1,9 +1,9 @@
 # output binary
-BIN := KWIC
+BIN := src/KWIC
 
 # source files
 SRCS := \
-    $(shell find . -name '*.cpp' ! -path '*/Unit_Tests/*' ! -name 'main_gtest.cpp')
+    $(shell find . -name '*.cpp' ! -path '*/tests/*')
 
 # intermediate directory for generated object files
 OBJDIR := .o
@@ -45,11 +45,11 @@ PRECOMPILE =
 # postcompile step
 POSTCOMPILE = mv -f $(DEPDIR)/$*.Td $(DEPDIR)/$*.d
 
-all: $(BIN)
+all: $(BIN) tests/Test
 
 .PHONY: clean
 clean:
-	$(RM) -r $(OBJDIR) $(DEPDIR) $(BIN) Test
+	$(RM) -r $(OBJDIR) $(DEPDIR) $(BIN) tests/Test
 
 $(BIN): $(OBJS)
 	$(LD) -o $@ $^ $(LDFLAGS) $(LDLIBS)
@@ -81,7 +81,7 @@ TESTDEPS := $(patsubst %,$(DEPDIR)/%.d,$(basename $(TESTSRCS)))
 $(shell mkdir -p $(dir $(TESTOBJS)) >/dev/null)
 $(shell mkdir -p $(dir $(TESTDEPS)) >/dev/null)
 
-Test : $(TESTOBJS)
+tests/Test : $(TESTOBJS)
 	$(CXX) -o $@ $^ $(TESTLDFLAGS) $(LDLIBS)
 
 

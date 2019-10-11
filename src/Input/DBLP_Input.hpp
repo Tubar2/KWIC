@@ -33,6 +33,9 @@ private:
     int title_iterator;
     int title_count;
 
+    // remove spaces from query
+    std::string query_adapt(std::string query);
+
     // write the data into a `std::string`
     static std::size_t write_data(void* buf, std::size_t size, std::size_t nmemb, void* userp);
 

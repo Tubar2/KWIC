@@ -28,7 +28,7 @@ int main(int argc, const char * argv[]) {
     LineStorage data;
     
     //Creating new Input objects
-    Text_Input input(data, typeInput);
+    DBLP_Input input(data, typeInput);
     JSON_Input words(data, typeStops);
     
     //Creating output object

@@ -1,4 +1,4 @@
-#include "../Output/Text_Output.hpp"
+#include "../src/Output/Text_Output.hpp"
 
 #include <gtest/gtest.h>
 
